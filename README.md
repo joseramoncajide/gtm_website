@@ -40,3 +40,10 @@ Select the application type Other, enter the name "Google Sheets API Quickstart"
 Click OK to dismiss the resulting dialog.
 Click the file_download (Download JSON) button to the right of the client ID.
 Move this file to your working directory and rename it client_secret.json.
+
+
+Service account example: https://github.com/google/google-api-php-client/blob/master/examples/service-account.php
+
+
+
+# Give access to the new sheet to: sheets@gtm-website.iam.gserviceaccount.com
