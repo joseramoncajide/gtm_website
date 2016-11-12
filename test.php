@@ -8,7 +8,7 @@ use Google\Spreadsheet\DefaultServiceRequest;
 
 function getGoogleTokenFromKeyFile() {
     $client = new Google_Client();
-    $client->setAuthConfig( __DIR__ . 'client_secret_532495736607-29u7acn3al4qasrmv68dedd8tgiiioar.apps.googleusercontent.com.json' );
+    $client->setAuthConfig( __DIR__ . 'client_secret.json' );
     $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
     if ($client->isAccessTokenExpired()) {
         $client->refreshTokenWithAssertion();
