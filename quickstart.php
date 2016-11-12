@@ -1,5 +1,5 @@
 <?php
-#require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '../vendor/autoload.php';
 
 
 define('APPLICATION_NAME', 'Google Sheets API PHP Quickstart');
