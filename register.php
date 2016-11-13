@@ -201,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-                    <form class="form form-register dark" id="registration" method="post" action="signup.php">
+                    <form class="form form-register dark" id="registration" method="post" target="no-target">
                         <div class="form-group">
                             <label for="fullname" class="col-sm-3 col-xs-12 control-label">Full name</label>
                             <div class="col-sm-9 col-xs-12">
@@ -209,9 +209,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="website" class="col-sm-3 col-xs-12 control-label">Site address</label>
+                            <label for="username" class="col-sm-3 col-xs-12 control-label">User name</label>
                             <div class="col-sm-9 col-xs-12">
-                                <input type="text" class="form-control" name="website" id="website" placeholder="">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -233,13 +233,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="newsletter" value="1"> Submit to the monthly newsletter
-                                    </label>
-                                </div>
-                            </div>
+
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Get started</button>
                     </form>
@@ -284,7 +278,118 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
     <script type="text/javascript" src="assets/js/toastr.min.js"></script>
     <script type="text/javascript" src="assets/js/headhesive.min.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+    <!--script type="text/javascript" src="assets/js/scripts.js"></script-->
+
+
+<script>
+
+(function(){
+// Form validation - sign up
+	toastr.options = {"positionClass": "toast-top-full-width"};
+    if( $('.form-register').length ) {
+      $('.form-register').validate({
+        rules: {
+          password: {
+            minlength: 5
+          },
+          confirmPassword: {
+            minlength: 5,
+            equalTo: "#password"
+          }
+        },
+        messages: {
+          fullname: "Please enter your fullname xxx",
+          password: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 5 characters long"
+          },
+          confirmPassword: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 5 characters long",
+            equalTo: "Please enter the same password as above"
+          },
+          email: "Please enter a valid email address"
+        },      
+        submitHandler: function(form) {
+       		form.submit();
+          /*var $this = $(form);
+          $.ajax({
+            url: $this.attr('action'),
+            type: 'POST',
+            data: $this.serialize(),
+          })
+          .done(function(msg) {
+            if( msg == 'ok' ) {
+              toastr.success('Thank you for signing up.');
+              $this[0].reset();
+            } else {
+              toastr.error('An error occured. Please try again later.');
+            }
+          })
+          .fail(function() {
+            toastr.error('An error occured. Please try again later.');
+          });
+          */
+        }      
+      });
+    }
+})();
+
+
+    $('#registration').one('submit',function(e){
+    
+    	e.preventDefault();
+   
+   		console.log("-> Formulario enviado por el usuario");
+    	
+        var inputEmail = $('#email').val();
+        
+        console.log("-> Email:" + inputEmail);
+        
+        var inputFullName = $('#fullname').val();
+        
+        console.log("-> Nombre:" + inputFullName);
+        
+        var inputUserName = $('#username').val();
+        
+        console.log("-> Usuario:" + inputUserName);
+        
+        var inputPassword = $('#password').val();
+        
+        console.log("-> Clave:" + inputPassword);
+        
+        
+        if( /(.+)@(.+){2,}\.(.+){2,}/.test(inputEmail) ){
+        	
+        	console.log('El email es válido');
+        	
+        	//var clientid = getClientId();
+        	
+        	//var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry.1755877516='+JSON.stringify(clientid)+'';
+        	var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
+        	  	
+        	var submitRef = '&submit=Submit';
+        	
+        	var submitURL = (baseURL + submitRef);
+        	
+        	$(this)[0].action=submitURL;        	
+        	
+        	$(this).submit();
+        	
+        	//$('#email').addClass('active').val('Thank You!');
+        	
+        	
+        	//$("#myModal").modal('show');
+        
+        } else {
+        	
+        	$('#error').css('display', 'block');
+        	
+        	
+        }
+    });
+</script>
+<iframe src="about:blank" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 
 </body>
 </html>
