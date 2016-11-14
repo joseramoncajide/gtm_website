@@ -409,6 +409,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         	
         	//$("#myModal").modal('show');
         	
+			var myDate = new Date();
+			myDate.setMonth(myDate.getMonth() + 12);
+			document.cookie = "logged_user=" + inputUserName + ";expires=" + myDate  + ";domain=.milanding.ovh;path=/";
+        	
         	window.setTimeout( function(){	
         			//window.location.replace("thankyou.php");
         		}, 900 );

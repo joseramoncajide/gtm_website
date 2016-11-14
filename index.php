@@ -1,14 +1,7 @@
 <?php
-$uid = array_shift((explode(".",$_SERVER['HTTP_HOST'])));
-//echo $uid;
-if ($uid == "milanding") {
-	define("SUBDOMINIO", "");
-	define("URL_SUBDOMINIO", "http://mitienda.ovh");
-} else {
-	define("SUBDOMINIO", $uid);
-	define("URL_SUBDOMINIO", "http://".$uid.".mitienda.ovh");
-}
-//echo URL_SUBDOMINIO;
+require "gtm.inc.php";
+require "crm.inc.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,9 +10,8 @@ if ($uid == "milanding") {
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title><?php echo SUBDOMINIO;?> | Home | Google Tag Manger</title>
+    <title>Learning Google Tag Manger</title>
     <meta name="description" content="programa avanzado google tag manager">
-    <meta name="keywords" content="Startups template">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.jpg">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.jpg">
@@ -38,6 +30,26 @@ if ($uid == "milanding") {
     <![endif]-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+<script>
+	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
+
+	dataLayer.push({
+		'userId' : '<?php echo USER_ID;?>', 
+		'user_cohort' : '<?php echo USER_COHORT;?>',
+		'user_name': '<?php echo USER_NAME;?>',
+		'user_login': '<?php echo USER_LOGIN;?>',
+		'user_age': '<?php echo USER_AGE;?>',
+		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
+		'pageTemplate': 'landingPage',
+		'contentGroup1': 'Landings'
+	});
+</script>
+
+<?php
+echo GTM_CODE;
+?>
+
 
 <script src="http://www.geoplugin.net/javascript.gp"></script>
     
