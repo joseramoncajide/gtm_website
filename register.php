@@ -201,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-                    <form class="form form-register dark" id="registration" method="post" target="no-target">
+                    <form class="form form-register dark" id="registration" method="post" target="no-target" action="signup.php">
                         <div class="form-group">
                             <label for="fullname" class="col-sm-3 col-xs-12 control-label">Full name</label>
                             <div class="col-sm-9 col-xs-12">
@@ -311,9 +311,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           email: "Please enter a valid email address"
         },      
         submitHandler: function(form) {
-       		form.submit();
+       		//form.submit();
+
        		
-       		
+       		/*
   
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
@@ -324,6 +325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         0: function() {
                             //Success message
                             console.log('OK 1');
+                            toastr.success('Thank you for signing up.');
                         },
                         200: function() {
                             //Success Message
@@ -332,7 +334,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     }
                 });
             
-          /*var $this = $(form);
+            */
+                
+            
+          var $this = $(form);
           $.ajax({
             url: $this.attr('action'),
             type: 'POST',
@@ -349,7 +354,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           .fail(function() {
             toastr.error('An error occured. Please try again later.');
           });
-          */
+          
         }      
       });
     }
@@ -403,6 +408,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         	
         	
         	//$("#myModal").modal('show');
+        	
+        	window.setTimeout( function(){	
+        			//window.location.replace("thankyou.php");
+        		}, 900 );
         
         } else {
         	
