@@ -312,6 +312,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         },      
         submitHandler: function(form) {
        		form.submit();
+       		
+       		
+  
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
+                    data: {"entry.1156608205": $('#fullname').val(), "entry.1346860195": $('#username').val(), "entry.75082348": $('#email').val()},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function() {
+                            //Success message
+                            console.log('OK 1');
+                        },
+                        200: function() {
+                            //Success Message
+                            console.log('OK 2');
+                        }
+                    }
+                });
+            
           /*var $this = $(form);
           $.ajax({
             url: $this.attr('action'),
