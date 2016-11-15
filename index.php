@@ -30,6 +30,7 @@ require "crm.inc.php";
     <![endif]-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script src="http://www.geoplugin.net/javascript.gp"></script>
 
 <script>
 	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
@@ -45,53 +46,14 @@ require "crm.inc.php";
 		'contentGroup1': 'Landings'
 	});
 </script>
+   
+</head>
 
+<body id="landing-page">
 <?php
 echo GTM_CODE;
 ?>
 
-
-<script src="http://www.geoplugin.net/javascript.gp"></script>
-    
-<script>
-	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-	
-	dataLayer.push({
-		'userId' : '<?php echo SUBDOMINIO;?>', //$_SERVER['PHP_AUTH_USER']
-		'pageTemplate': 'landingPage',
-		'lastModified': '<?php echo date ("Y-m-d H:i:s.", getlastmod()); ?>',
-		'contentGroup1': 'Landings'
-	});
-</script>
-    
-</head>
-
-<body id="landing-page">
-
-
-
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TLDKL6&gtm_auth=yrqgvUOu3OKksGM1IoPTNQ&gtm_preview=env-4&gtm_cookies_win=x"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=yrqgvUOu3OKksGM1IoPTNQ&gtm_preview=env-4&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
-})(window,document,'script','masterDataLayer','GTM-TLDKL6');</script>
-<!-- End Google Tag Manager -->
-
-
-
-<!-- Google Tag Manager -->
-<!-- noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TLDKL6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','masterDataLayer','GTM-TLDKL6');</script -->
-<!-- End Google Tag Manager -->
 
 
 
@@ -101,36 +63,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="loader"></div>
     </div>
         
-    <header>
-        <nav class="navigation navigation-header">
-            <div class="container">
-                <div class="navigation-brand">
-                    <div class="brand-logo">
-						<a href="index.php" class="logo"></a>
-						<span class="sr-only">startup.ly</span>
-                    </div>
-                    <button class="navigation-toggle visible-xs" type="button" data-toggle="dropdown" data-target=".navigation-navbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navigation-navbar">
-                    <ul class="navigation-bar navigation-bar-left">
-                        <li class="active"><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#register">Register</a></li>
-                        <li><a href="#footer">Contacts</a></li>
-                    </ul>
-                    <ul class="navigation-bar navigation-bar-right">
-                        <li class="featured"><a href="form.php">Register</a></li>
-                        <li class="featured"><a href="ajaxform.php">Register (Ajax)</a></li>
-                    </ul>  
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php
+include 'header.inc.php';
+?>
  
  <!-- 
  
@@ -171,6 +106,96 @@ x[0].className = x[0].className + ' btn-primary';
   position: relative;
 }   
 -->
+
+
+<script>
+
+//toastr.success('Thank you for signing up.');
+//toastr.error('An error occured. Please try again later.');
+
+/*$('body').on('DOMNodeInserted', '#common-parent', function(e) {
+  if ($(e.target).attr('class') === 'myClass') {
+    console.log('hit');
+  }
+});
+
+
+
+$(document).on('DOMNodeInserted', '.toast-success', function(e) {
+    
+    //Evento
+    //dataLayer.push({event:'gaevent', eventCategory:'Conversion', eventAction: 'Contactar', eventLabel: ''});
+    
+    
+    //Página virtual
+    dataLayer.push({'event':'virtualPage', 'page': '/formulario_enviado', 'pageTitle': 'Gracias por registrarte'});
+
+});
+
+$(document).on('DOMNodeInserted', '.error', function(e) {
+	
+	//console.log(e.target);
+	
+	element = e.target;
+	
+	field = element.getAttribute('for');
+    
+    dataLayer.push({'event':'gaEvent', 'eventCategory':'Errores en formularios', 'eventAction': 'Registro', 'eventLabel': field + ':' + element.textContent});
+    
+    
+});
+*/
+/*
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+  
+  var success = document.querySelector(".toast-success");
+  var fail = document.querySelector(".toast-error");
+
+  success.addEventListener('DOMNodeInserted', function(evt) {
+	dataLayer.push({'event':'eventga','eventCategory':'OK','eventAction': 'Contactar','eventLabel': ''});
+  }, false);
+  
+  fail.addEventListener('DOMNodeInserted', function(evt) {
+	dataLayer.push({'event':'eventga','eventCategory':'OK','eventAction': 'Contactar','eventLabel': ''});
+  }, false);  
+
+}, false);
+
+
+
+
+function getClientID() {
+  try {
+    var trackers = ga.getAll();
+    var i, len;
+    for (i = 0, len = trackers.length; i < len; i += 1) {
+      if (trackers[i].get('trackingId') === "{{CFG_UAId}}") {
+        return trackers[i].get('clientId');
+      }
+    }
+  } catch(e) {}  
+  return 'false';
+}
+
+try {
+	var frm =  document.getElementById('registration');	
+	var clientid = getClientID();
+	if (typeof(frm) != 'undefined' && frm != null && clientid != null) {
+		var input = document.createElement("input");
+		input.setAttribute("type", "hidden");
+		input.setAttribute("name", "clientid");
+		input.setAttribute("value", "" + clientid + "");
+		frm.appendChild(input);
+		console.log("Added clientid field for " + clientid);
+		}
+}catch(e) {
+    console.log("Error trying to add clientid field " + e.message);
+}
+*/
+</script>
 
     <div id="hero" class="static-header plain-version light clearfix">
         <div class="text-heading">
