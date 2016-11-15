@@ -60,7 +60,7 @@ if ($_COOKIE['logged_user'] != '') {
 	$new_Date =  DateTime::createFromFormat('d/m/Y H:i:s', $values[$key][0])->getTimestamp();
 	
 	//User age
-	$birth_Date =  DateTime::createFromFormat('d/m/Y', $values[$key][7])->getTimestamp();
+	$birth_Date =  DateTime::createFromFormat('d/m/Y', $values[$key][6])->getTimestamp();
 	
 	$date_1 = date('Y-m-d', $birth_Date);
 	$date_2 =  date( 'Y-m-d' );

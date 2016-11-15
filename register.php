@@ -32,21 +32,9 @@ require "crm.inc.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script src="http://www.geoplugin.net/javascript.gp"></script>
 
-<script>
-	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-
-	dataLayer.push({
-		'userId' : '<?php echo USER_ID;?>', 
-		'user_cohort' : '<?php echo USER_COHORT;?>',
-		'user_name': '<?php echo USER_NAME;?>',
-		'user_login': '<?php echo USER_LOGIN;?>',
-		'user_age': '<?php echo USER_AGE;?>',
-		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
-		'pageTemplate': 'landingPage',
-		'contentGroup1': 'Landings'
-	});
-</script>
-   
+<?php
+include 'dataLayer.inc.php';
+?>
 </head>
 
 <body id="landing-page">
@@ -78,24 +66,37 @@ include 'header.inc.php';
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
                     <form class="form form-register dark" id="registration" method="post" target="no-target" action="signup.php">
+                         <div class="form-group">
+                            <label for="email" class="col-sm-3 col-xs-12 control-label">Email address</label>
+                            <div class="col-sm-9 col-xs-12">
+                                <input type="email" class="form-control required email" name="email" id="email" placeholder="">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="fullname" class="col-sm-3 col-xs-12 control-label">Full name</label>
                             <div class="col-sm-9 col-xs-12">
                                 <input type="text" class="form-control required" name="fullname" id="fullname" placeholder="">
                             </div>
                         </div>
+                     	<div class="form-group">
+                            <label for="fullname" class="col-sm-3 col-xs-12 control-label">Birth date</label>
+                            <div class="col-sm-4 col-xs-12">
+                                <input type="text" class="form-control required" name="year" id="year" placeholder="YYYY">
+                            </div>
+                            <div class="col-sm-2 col-xs-12">
+                                <input type="text" class="form-control required" name="month" id="month" placeholder="MM">
+                            </div>
+                            <div class="col-sm-2 col-xs-12">
+                                <input type="text" class="form-control required" name="day" id="day" placeholder="DD">
+                            </div>
+                        </div>                        
                         <div class="form-group">
                             <label for="username" class="col-sm-3 col-xs-12 control-label">User name</label>
                             <div class="col-sm-9 col-xs-12">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="">
+                                <input type="text" class="form-control required" name="username" id="username" placeholder="">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="col-sm-3 col-xs-12 control-label">Email address</label>
-                            <div class="col-sm-9 col-xs-12">
-                                <input type="email" class="form-control required email" name="email" id="email" placeholder="">
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label for="password" class="col-sm-3 col-xs-12 control-label">Password</label>
                             <div class="col-sm-9 col-xs-12">
@@ -166,6 +167,21 @@ include 'header.inc.php';
           confirmPassword: {
             minlength: 5,
             equalTo: "#password"
+          },
+          year: {
+            minlength: 4,
+            maxlength: 4,
+            number: true
+          },
+          day: {
+            minlength: 2,
+            maxlength: 2,
+            number: true
+          },
+          month: {
+            minlength: 2,
+            maxlength: 2,
+            number: true
           }
         },
         messages: {
@@ -223,7 +239,7 @@ include 'header.inc.php';
             }
           })
           .fail(function() {
-            toastr.error('An error occured. Please try again later.');
+            //toastr.error('An error occured. Please try again later.');
           });
           
         }      
@@ -241,6 +257,18 @@ include 'header.inc.php';
         var inputEmail = $('#email').val();
         
         console.log("-> Email:" + inputEmail);
+        
+        var inputYear = $('#year').val();
+        
+        console.log("-> Year:" + inputYear);        
+
+        var inputMonth = $('#month').val();
+        
+        console.log("-> Month:" + inputMonth);   
+
+        var inputDay = $('#day').val();
+        
+        console.log("-> Day:" + inputDay);   
         
         var inputFullName = $('#fullname').val();
         
@@ -262,8 +290,9 @@ include 'header.inc.php';
         	//var clientid = getClientId();
         	
         	//var baseURL = 'https://docs.google.com/forms/d/1FAIpQLSezJPbCTjlxCktTpNwi9nDRsinPM3M2mS_yC9-SfZkeCrn3zA/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry.1755877516='+JSON.stringify(clientid)+'';
-        	var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
-        	
+        	//var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
+        	var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
+
         	
         	var submitRef = '&submit=Submit';
         	

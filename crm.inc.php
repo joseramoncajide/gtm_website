@@ -57,7 +57,7 @@ if ($_COOKIE['logged_user'] != '') {
 	$new_Date =  DateTime::createFromFormat('d/m/Y H:i:s', $values[$key][0])->getTimestamp();
 	
 	//User age
-	$birth_Date =  DateTime::createFromFormat('d/m/Y', $values[$key][7])->getTimestamp();
+	$birth_Date =  DateTime::createFromFormat('d/m/Y', $values[$key][6])->getTimestamp();
 	
 	$date_1 = date('Y-m-d', $birth_Date);
 	$date_2 =  date( 'Y-m-d' );
@@ -68,8 +68,22 @@ if ($_COOKIE['logged_user'] != '') {
 	$user_age = date_diff($datetime1, $datetime2);
 	$user_age = $user_age->format('%y');
 	
-
-
+	if ($user_age < 18) {
+		$bin = "Teenager";
+	} elseif ($user_age > 19  && $user_age < 22) {
+		$bin = " Young Adult";
+	} elseif ($user_age > 22  && $user_age < 30) {
+		$bin = "Adult";		
+	} elseif ($user_age > 30  && $user_age < 45) {
+		$bin = "Young Middle-Aged Adult";	
+	} elseif ($user_age > 46  && $user_age < 49) {
+		$bin = "Middle-Aged Adult";			
+	} elseif ($user_age > 50 && $user_age < 65) {
+		$bin = "Middle-Aged Adult";
+	} else {
+		$bin = "Senior Citizen";
+	}
+	
 	define('USER_ID', md5($values[$key][2]));
 	define('USER_COHORT', date('m-Y', $new_Date));
 	define('USER_NAME', ucfirst(strtolower($values[$key][1])));
@@ -77,6 +91,7 @@ if ($_COOKIE['logged_user'] != '') {
 	define('USER_LAST_ACCESS', date('d-m-Y H:i:s'));
 	define('USER_LAST_ACCESS', date('d-m-Y H:i:s'));
 	define('USER_AGE', $user_age);
+	define('USER_BIN', $bin);
 
 } else {
 
@@ -87,6 +102,7 @@ if ($_COOKIE['logged_user'] != '') {
 	define('USER_LAST_ACCESS', '(not set)');
 	define('USER_LAST_ACCESS', '(not set)');
 	define('USER_AGE', '(not set)');
+	define('USER_BIN', '(not set)');
 
 }
 

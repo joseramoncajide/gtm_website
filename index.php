@@ -41,6 +41,7 @@ require "crm.inc.php";
 		'user_name': '<?php echo USER_NAME;?>',
 		'user_login': '<?php echo USER_LOGIN;?>',
 		'user_age': '<?php echo USER_AGE;?>',
+		'user_bin': '<?php echo USER_BIN;?>',
 		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
 		'pageTemplate': 'landingPage',
 		'contentGroup1': 'Landings'

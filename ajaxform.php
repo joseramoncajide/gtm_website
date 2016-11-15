@@ -32,20 +32,9 @@ require "crm.inc.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script src="http://www.geoplugin.net/javascript.gp"></script>
 
-<script>
-	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-
-	dataLayer.push({
-		'userId' : '<?php echo USER_ID;?>', 
-		'user_cohort' : '<?php echo USER_COHORT;?>',
-		'user_name': '<?php echo USER_NAME;?>',
-		'user_login': '<?php echo USER_LOGIN;?>',
-		'user_age': '<?php echo USER_AGE;?>',
-		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
-		'pageTemplate': 'landingPage',
-		'contentGroup1': 'Landings'
-	});
-</script>
+<?php
+include 'dataLayer.inc.php';
+?>
    
 </head>
 
