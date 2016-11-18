@@ -46,4 +46,16 @@ Service account example: https://github.com/google/google-api-php-client/blob/ma
 
 
 
-# Give access to the new sheet to: sheets@gtm-website.iam.gserviceaccount.com
+#### Give access to the new sheet to: sheets@gtm-website.iam.gserviceaccount.com
+
+
+## Instalación de GTM
+
+- http://noa.milanding.ovh/admin.php
+- https://docs.google.com/forms/d/e/1FAIpQLScTyEtJWP7g3SqXL570z_NHuqkn8INR1zk8uz_K5sfAkSxl9g/viewform
+- https://goo.gl/forms/EDdKfIYkXBcnZ6Ek1
+
+
+## Registro - CRM
+
+http://noa.milanding.ovh/register.php
