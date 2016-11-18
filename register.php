@@ -93,14 +93,14 @@ include 'header.inc.php';
                         <div class="form-group">
                             <label for="username" class="col-sm-3 col-xs-12 control-label">User name</label>
                             <div class="col-sm-9 col-xs-12">
-                                <input type="text" class="form-control required" name="username" id="username" placeholder="">
+                                <input type="text" class="form-control required" name="username" id="username"  placeholder="You can use: <?php echo array_shift((explode(".",$_SERVER['HTTP_HOST'])));?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="col-sm-3 col-xs-12 control-label">Password</label>
                             <div class="col-sm-9 col-xs-12">
-                                <input type="password" class="form-control required" name="password" id="password" placeholder="">
+                                <input type="password" class="form-control required" name="password" id="password" placeholder="4 characters are enough">
                             </div>
                         </div>
                         <div class="form-group">
@@ -162,10 +162,10 @@ include 'header.inc.php';
       $('.form-register').validate({
         rules: {
           password: {
-            minlength: 5
+            minlength: 4
           },
           confirmPassword: {
-            minlength: 5,
+            minlength: 4,
             equalTo: "#password"
           },
           year: {
@@ -185,7 +185,7 @@ include 'header.inc.php';
           }
         },
         messages: {
-          fullname: "Please enter your fullname xxx",
+          fullname: "Please enter your fullname",
           password: {
             required: "Please provide a password",
             minlength: "Your password must be at least 5 characters long"
