@@ -30,8 +30,7 @@ if($_SERVER['REQUEST_URI'] == '/' OR $_SERVER['REQUEST_URI'] == '/index.php') {
                     <ul class="navigation-bar navigation-bar-right">
                                         <?php 
                     if ($_COOKIE['logged_user'] == '') {
-						echo '<li class="featured"><a href="form.php">Register</a></li>';
-						echo '<li class="featured"><a href="ajaxform.php">Register (Ajax)</a></li>';
+						echo '<li class="featured"><a href="register.php">Sign Up</a></li>';
                     } else {
 						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';            
                     }
@@ -67,8 +66,7 @@ if($_SERVER['REQUEST_URI'] == '/' OR $_SERVER['REQUEST_URI'] == '/index.php') {
                     <ul class="navigation-bar navigation-bar-right">
                                         <?php 
                     if ($_COOKIE['logged_user'] == '') {
-						echo '<li class="featured"><a href="form.php">Register</a></li>';
-						echo '<li class="featured"><a href="ajaxform.php">Register (Ajax)</a></li>';
+						echo '<li class="featured"><a href="register.php">Sign Up</a></li>';
                     } else {
 						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';            
                     }
@@ -183,20 +181,7 @@ $(document).ready(function () {
 	});
 });
 
-/*
-$(window).scroll(function() {
-    if($(window).scrollTop() > 50) {
-        console.log("scroll");
-    setCookie('acepta_cookies','1',365);
-    document.getElementById("barraaceptacion").style.display="none";
-    dataLayer.push({'event': 'cookies_aceptadas'});
-        $(window).off("scroll");
-    } else {
-        //activateHeader();
-    }
-});
 
-*/
 
 </script>
 <!--//FIN BLOQUE COOKIES-->

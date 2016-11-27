@@ -35,8 +35,8 @@ if ($credentials_file = checkServiceAccountCredentialsFile()) {
   #$client->setAuthConfig(CLIENT_SECRET_PATH);
   $client->setAccessType('offline');
 
-
-echo 'Hello '.($_COOKIE['logged_user']!='' ? $_COOKIE['logged_user'] : 'Guest'); // Hello David!
+echo "<pre>";
+echo 'Hola '.($_COOKIE['logged_user']!='' ? $_COOKIE['logged_user'] : 'Test'); 
 
 
 if ($_COOKIE['logged_user'] != '') {
