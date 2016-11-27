@@ -59,6 +59,7 @@ echo GTM_CODE;
 
 
 
+
     <!-- Preloader -->
     <div id="mask">
         <div id="loader"></div>
@@ -391,7 +392,7 @@ try {
             </div>
 			
             <div class="col-md-12 col-lg-3">
-                <a href="http://kschool.com/cursos/programa-profesional-de-google-tag-manager/?utm_source=ksmasteraw&utm_medium=link&utm_campaign=gtmninja" class="btn btn-default">Exit link</a>
+                <a href="http://www.google.es/?utm_source=ksmasteraw&utm_medium=link&utm_campaign=gtmninja" class="btn btn-default">Exit link</a>
             </div>
         </div>
     </section>
@@ -514,7 +515,8 @@ try {
     </footer>
     
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
-    
+
+
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
     <![endif]-->  

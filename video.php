@@ -1,14 +1,7 @@
 <?php
-$uid = array_shift((explode(".",$_SERVER['HTTP_HOST'])));
-//echo $uid;
-if ($uid == "milanding") {
-	define("SUBDOMINIO", "");
-	define("URL_SUBDOMINIO", "http://mitienda.ovh");
-} else {
-	define("SUBDOMINIO", $uid);
-	define("URL_SUBDOMINIO", "http://".$uid.".mitienda.ovh");
-}
-//echo URL_SUBDOMINIO;
+require "gtm.inc.php";
+require "crm.inc.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,7 +10,7 @@ if ($uid == "milanding") {
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title><?php echo SUBDOMINIO;?> | Watch the video | Programa Avanzado Google Tag Manger</title>
+    <title>Learning Google Tag Manger</title>
     <meta name="description" content="programa avanzado google tag manager">
     <meta name="keywords" content="Startups template">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
@@ -39,35 +32,16 @@ if ($uid == "milanding") {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     
-<script>
-	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-	
-	dataLayer.push({
-		'userId' : '<?php echo SUBDOMINIO;?>' //$_SERVER['PHP_AUTH_USER']
-	});
-</script>
+<?php
+include 'dataLayer.inc.php';
+?>
     
 </head>
 
 <body id="landing-page">
-
-
-
-
-
-
-
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TLDKL6&gtm_auth=yrqgvUOu3OKksGM1IoPTNQ&gtm_preview=env-4&gtm_cookies_win=x"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=yrqgvUOu3OKksGM1IoPTNQ&gtm_preview=env-4&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
-})(window,document,'script','masterDataLayer','GTM-TLDKL6');</script>
-<!-- End Google Tag Manager -->
-
+<?php
+echo GTM_CODE;
+?>
 
 
 
@@ -76,36 +50,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="loader"></div>
     </div>
         
-    <header>
-        <nav class="navigation navigation-header">
-            <div class="container">
-                <div class="navigation-brand">
-                    <div class="brand-logo">
-						<a href="index.html" class="logo"></a>
-						<span class="sr-only">startup.ly</span>
-                    </div>
-                    <button class="navigation-toggle visible-xs" type="button" data-toggle="dropdown" data-target=".navigation-navbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navigation-navbar">
-                    <ul class="navigation-bar navigation-bar-left">
-                        <li class="active"><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#register">Register</a></li>
-                        <li><a href="#footer">Contacts</a></li>
-                    </ul>
-                    <ul class="navigation-bar navigation-bar-right">
-                        <li><a href="register.php">Login</a></li>
-                        <li class="featured"><a href="register.php">Sign up</a></li>
-                    </ul>  
-                </div>
-            </div>
-        </nav>
-    </header>
+ <?php
+include 'header.inc.php';
+?>
     
     <div id="hero" class="static-header video-version light clearfix">
 		<div class="text-heading">
@@ -134,18 +81,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
     
-	    <section id="guarantee" class="long-block light">
+    <section id="guarantee" class="long-block light">
         <div class="container">
             <div class="col-md-12 col-lg-9">
 				<i class="icon icon-seo-icons-24 pull-left"></i>
                 <article class="pull-left">
-                    <h2><strong>LAUNCH</strong> YOUR STARTUP NOW!</h2>
-                    <p class="thin">In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret.</p>
+                    <h2>BE A <strong>GOOGLE TAG MANAJER</strong> NINJA!</h2>
+                    <p class="thin">Take a professional training to become a Google Tag Manager specialist with this hads-on training course.</p>
                 </article>
             </div>
 			
             <div class="col-md-12 col-lg-3">
-                <a href="register.php" class="btn btn-default">Register Now!</a>
+                <a href="http://www.google.es/?utm_source=ksmasteraw&utm_medium=link&utm_campaign=gtmninja" class="btn btn-default">Exit link</a>
             </div>
         </div>
     </section>
@@ -158,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <img src="assets/img/logo.png" alt="logo" />
                     </div>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco. Qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Nisi ut aliquid ex ea commodi consequatur?</p>
-                    <p><strong>John Doeson, Founder</strong>.</p>
+                    <p><strong>@jrcajide, Founder</strong>.</p>
                 </div>
                 <div class="col-sm-5 social-wrap">
                     <div class="footer-title">Social Networks 1</div>
@@ -200,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
         </div>
-        <div class="copyright">startup.ly 2014. All rights reserved.</div>
+        <div class="copyright">@jrcajide 2016. All rights reserved</div>
     </footer>
     
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
