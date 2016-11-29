@@ -77,8 +77,8 @@ include 'header.inc.php';
             </div>
 			
             <div class="col-md-12 col-lg-3">
-                <a href="/assets/downloads/a.pdf" class="btn btn-default" target="_blank">Download as PDF</a>
-            	<a href="/assets/downloads/b.png" class="btn btn-default" target="_blank">Download as PNG</a>
+                <a href="/assets/downloads/a.pdf" class="btn btn-default" target="_blank">Download Cheatsheet (PDF)</a>
+            	<a href="/assets/downloads/b.png" class="btn btn-default" target="_blank">Download Cheatsheet (PNG)</a>
 
             </div>
         </div>

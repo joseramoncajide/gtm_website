@@ -32,21 +32,9 @@ require "crm.inc.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script src="http://www.geoplugin.net/javascript.gp"></script>
 
-<script>
-	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-
-	dataLayer.push({
-		'userId' : '<?php echo USER_ID;?>', 
-		'user_cohort' : '<?php echo USER_COHORT;?>',
-		'user_name': '<?php echo USER_NAME;?>',
-		'user_login': '<?php echo USER_LOGIN;?>',
-		'user_age': '<?php echo USER_AGE;?>',
-		'user_bin': '<?php echo USER_BIN;?>',
-		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
-		'pageTemplate': 'landingPage',
-		'contentGroup1': 'Landings'
-	});
-</script>
+<?php
+include 'dataLayer.inc.php';
+?>
    
 </head>
 
@@ -54,7 +42,6 @@ require "crm.inc.php";
 <?php
 echo GTM_CODE;
 ?>
-
 
 
 
@@ -201,7 +188,7 @@ try {
 
     <div id="hero" class="static-header plain-version light clearfix">
         <div class="text-heading">
-            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">Want to become a  <span class="highlight">GTM </span> ninja?</h1>
+            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">Do you want to be a  <span class="highlight">GTM </span> ninja?</h1>
             <p class="animated hiding" data-animation="fadeInDown" data-delay="500">&mdash; Start tracking this site now!</p>
             <ul class="list-inline">
                 <li><a id="register" href="form.php" class="btn btn-default animated hiding" data-animation="bounceIn" data-delay="500">Register Now!</a></li>

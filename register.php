@@ -314,7 +314,7 @@ include 'header.inc.php';
 			document.cookie = "logged_user=" + inputUserName + ";expires=" + myDate  + ";domain=.milanding.ovh;path=/";
         	
         	window.setTimeout( function(){	
-        			//window.location.replace("thankyou.php");
+        			window.location.replace("index.php");
         		}, 900 );
         
         } else {
