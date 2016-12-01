@@ -524,5 +524,8 @@ try {
     <script type="text/javascript" src="assets/js/headhesive.min.js"></script>
 	<script type="text/javascript" src="assets/mailchimp/js/mailing-list.js"></script>
     <script type="text/javascript" src="assets/js/scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/ecommerce.js"></script>
+    
 </body>
 </html>
