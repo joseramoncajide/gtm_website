@@ -15,7 +15,7 @@
 			})			
 	}		
 	  var ecommerceData = {
-	  	'event': 'evento_ecommerce',
+	  	//'event': 'evento_ecommerce',
 		'ecommerce' : {
 		  currencyCode : 'EUR',
 		  'impressions': products
