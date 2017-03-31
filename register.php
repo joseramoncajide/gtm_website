@@ -282,7 +282,7 @@ include 'header.inc.php';
         
         console.log("-> Clave:" + inputPassword);
 
-        var clientId = ga.getAll()[0].get('clientId');
+        var clientId = String(ga.getAll()[0].get('clientId'));
         
         console.log("-> clientId:" + clientId);        
         
