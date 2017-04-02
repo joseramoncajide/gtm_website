@@ -278,7 +278,7 @@ include 'header.inc.php';
         
         console.log("-> Usuario:" + inputUserName);
         
-        var inputPassword = $('#password').val();
+        var inputPassword = String($('#password').val());
         
         console.log("-> Clave:" + inputPassword);
 
