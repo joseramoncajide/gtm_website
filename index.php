@@ -498,7 +498,7 @@ try {
                 </div>
             </div>
         </div>
-        <div class="copyright">@jrcajide 2015. All rights reserved.</div>
+        <div class="copyright">@jrcajide 2017. All rights reserved.</div>
     </footer>
     
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
@@ -525,7 +525,7 @@ try {
 	<script type="text/javascript" src="assets/mailchimp/js/mailing-list.js"></script>
     <script type="text/javascript" src="assets/js/scripts.js"></script>
     
-    <script type="text/javascript" src="assets/js/ecommerce.js"></script>
+    <!-- script type="text/javascript" src="assets/js/ecommerce.js"></script -->
     
 </body>
 </html>
