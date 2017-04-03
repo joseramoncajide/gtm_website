@@ -44,7 +44,7 @@ if ($_COOKIE['logged_user'] != '') {
 	$range = 'CRM!A2:H';
 	$response = $service->spreadsheets_values->get($spreadsheetId, $range);
 	$values = $response->getValues();
-	//print("<pre>VALUES:");
+	print("<pre>VALUES:");
 	//print_r($values );
 	
 	$key = array_search($_COOKIE['logged_user'], array_column($values, 2));
@@ -95,14 +95,14 @@ if ($_COOKIE['logged_user'] != '') {
 
 } else {
 
-	define('USER_ID', '(not set)');
-	define('USER_COHORT', '(not set)');
-	define('USER_NAME', '(not set)');
-	define('USER_LOGIN', '(not set)');
-	define('USER_LAST_ACCESS', '(not set)');
-	define('USER_LAST_ACCESS', '(not set)');
-	define('USER_AGE', '(not set)');
-	define('USER_BIN', '(not set)');
+	define('USER_ID', '');
+	define('USER_COHORT', '');
+	define('USER_NAME', '');
+	define('USER_LOGIN', '');
+	define('USER_LAST_ACCESS', '');
+	define('USER_LAST_ACCESS', '');
+	define('USER_AGE', '');
+	define('USER_BIN', '');
 
 }
 
