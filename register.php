@@ -334,7 +334,7 @@ include 'header.inc.php';
     });
 </script>
 
-<script type="text/javascript">
+<!-- script type="text/javascript">
             function postToGoogle() {
    var inputEmail = $('#email').val();
         
@@ -373,6 +373,7 @@ include 'header.inc.php';
  
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
+                
                     data: {"entry.1156608205": inputFullName, "entry.1346860195": inputUserName, "entry.19749728_year": inputYear, "entry.19749728_month": inputMonth, "entry.19749728_day": inputDay, "emailAddress": inputEmail, "entry.2062009925": inputPassword, "entry.1755877516": clientId},
                     type: "POST",
                     dataType: "xml",
@@ -393,7 +394,7 @@ include 'header.inc.php';
                     return false;
                 });
             });
-        </script>
+        </script -->
 <iframe src="about:blank" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 
 </body>
