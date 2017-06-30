@@ -310,7 +310,7 @@ include 'header.inc.php';
         	
         	//form.submit;
         	
-        	//$(this).submit();
+        	$(this).submit();
         	
         	//$('#email').addClass('active').val('Thank You!');
         	
@@ -373,7 +373,7 @@ include 'header.inc.php';
  
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
-                    data: {"entry_1156608205": inputFullName, "entry_1346860195": inputUserName, "entry_19749728_year": inputYear, "entry_19749728_month": inputMonth, "entry_19749728_day": inputDay, "emailAddress": inputEmail, "entry_2062009925": inputPassword, "entry_1755877516": clientId},
+                    data: {"entry.1156608205": inputFullName, "entry.1346860195": inputUserName, "entry.19749728_year": inputYear, "entry.19749728_month": inputMonth, "entry.19749728_day": inputDay, "emailAddress": inputEmail, "entry.2062009925": inputPassword, "entry.1755877516": clientId},
                     type: "POST",
                     dataType: "xml",
                     statusCode: {
