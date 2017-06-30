@@ -310,7 +310,7 @@ include 'header.inc.php';
         	
         	//form.submit;
         	
-        	$(this).submit();
+        	//$(this).submit();
         	
         	//$('#email').addClass('active').val('Thank You!');
         	
@@ -333,6 +333,67 @@ include 'header.inc.php';
         }
     });
 </script>
+
+<script type="text/javascript">
+            function postToGoogle() {
+   var inputEmail = $('#email').val();
+        
+        console.log("-> Email:" + inputEmail);
+        
+        var inputYear = $('#year').val();
+        
+        console.log("-> Year:" + inputYear);        
+
+        var inputMonth = $('#month').val();
+        
+        console.log("-> Month:" + inputMonth);   
+
+        var inputDay = $('#day').val();
+        
+        console.log("-> Day:" + inputDay);   
+        
+        var inputFullName = $('#fullname').val();
+        
+        console.log("-> Nombre:" + inputFullName);
+        
+        var inputUserName = $('#username').val();
+        
+        console.log("-> Usuario:" + inputUserName);
+        
+        var inputPassword = String($('#password').val());
+        
+        console.log("-> Clave:" + inputPassword);
+        
+        var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+
+        var clientId = String(clientIdSplit[0]);
+ 
+ 
+ //formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+''
+ 
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
+                    data: {"entry_1156608205": inputFullName, "entry_1346860195": inputUserName, "entry_19749728_year": inputYear, "entry_19749728_month": inputMonth, "entry_19749728_day": inputDay, "emailAddress": inputEmail, "entry_2062009925": inputPassword, "entry_1755877516": clientId},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function() {
+                            //Success message
+                        },
+                        200: function() {
+                            //Success Message
+                        }
+                    }
+                });
+            }
+             
+            $(document).ready(function(){
+                $('#hero').submit(function() {
+                    postToGoogle();
+                    return false;
+                });
+            });
+        </script>
 <iframe src="about:blank" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 
 </body>
