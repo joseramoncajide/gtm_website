@@ -38,15 +38,13 @@ include 'dataLayer.inc.php';
 
 <?php
 if (defined('GTM_CODE')) {
-    str = <<<EOT
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM_CODE');</script>
-    <!-- End Google Tag Manager -->
-    EOT;
+    echo '<!-- Google Tag Manager -->'
+    echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
+    echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
+    echo "})(window,document,'script','dataLayer','GTM_CODE');</script>"
+    echo "<!-- End Google Tag Manager -->"
 }
 ?>
 <!-- Google Tag Manager -->
