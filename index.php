@@ -50,9 +50,7 @@ if (defined('GTM_CODE')) {
 
 }
 ?>
-
 </head>
-
 <body id="landing-page">
 <?php
 if (defined('GTM_CODE')) {
@@ -63,10 +61,6 @@ if (defined('GTM_CODE')) {
   echo"<!-- End Google Tag Manager (noscript) -->", PHP_EOL;
 }
 ?>
-
-
-
-
 
     <!-- Preloader -->
     <div id="mask">

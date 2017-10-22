@@ -24,18 +24,18 @@ require "crm.inc.php";
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/toastr.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-
+    
     <!--[if lt IE 9]>
         <script src="assets/js/html5.js"></script>
         <script src="assets/js/respond.min.js"></script>
     <![endif]-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-
+    
 <?php
 include 'dataLayer.inc.php';
 ?>
-
+    
 </head>
 
 <body id="landing-page">
@@ -49,11 +49,11 @@ echo GTM_CODE;
     <div id="mask">
         <div id="loader"></div>
     </div>
-
+        
  <?php
 include 'header.inc.php';
 ?>
-
+    
     <div id="hero" class="static-header video-version light clearfix">
 		<div class="text-heading">
             <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">Do not wait &mdash; <span class="highlight">launch</span> your startup now!</h1>
@@ -64,25 +64,23 @@ include 'header.inc.php';
                 <div class="video-container animated hiding" data-animation="bounceInUp" data-delay="1000">
                     <div class="embed-container">
 
-                      <iframe src="https://www.youtube.com/embed/v_k4coBmCzg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen width="640" height="390" ></iframe>
-
-                    <!--iframe src="//player.vimeo.com/video/89527215?api=1&player_id=vimeo-player-1" id="vimeo-player-1" width="640" height="390" frameborder="0" data-progress="true" data-seek="true" data-bounce="true" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe -->
-
+                    <iframe src="//player.vimeo.com/video/89527215?api=1&player_id=vimeo-player-1" id="vimeo-player-1" width="640" height="390" frameborder="0" data-progress="true" data-seek="true" data-bounce="true" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    
                     </div>
                 </div>
                 <img src="assets/img/features/video-container.png" alt="video" class="img-responsive animated hiding" data-animation="bounceInUp" data-delay="1000" />
             </div>
         </div>
     </div>
+    
 
-
-
+    
     <a id="showHere"></a>
+ 
 
-
-
-
-
+    
+  
+    
     <section id="guarantee" class="long-block light">
         <div class="container">
             <div class="col-md-12 col-lg-9">
@@ -92,13 +90,13 @@ include 'header.inc.php';
                     <p class="thin">Take a professional training to become a Google Tag Manager specialist with this hads-on training course.</p>
                 </article>
             </div>
-
+			
             <div class="col-md-12 col-lg-3">
                 <a href="http://www.google.es/?utm_source=ksmasteraw&utm_medium=link&utm_campaign=gtmninja" class="btn btn-default">Exit link</a>
             </div>
         </div>
     </section>
-
+    
     <footer id="footer" class="footer light">
         <div class="container">
             <div class="footer-content row">
@@ -113,14 +111,14 @@ include 'header.inc.php';
                     <div class="footer-title">Social Networks 1</div>
                     <ul class="list-inline socials">
                         <li><a href="https://www.facebook.com/mitienda" target="_blank" class="icon icon-socialmedia-08"></a></li>
-                        <li><a href="https://www.twitter.com/mitienda" target="_blank" class="icon icon-socialmedia-07"></a></li>
+                        <li><a href="https://www.twitter.com/mitienda" target="_blank" class="icon icon-socialmedia-07"></a></li>             
                         <li><a href="https://plus.google.com/u/0/" target="_blank" class="icon icon-socialmedia-16"></a></li>
                         <li><a href="https://www.pinterest.com/mitienda" target="_blank" class="icon icon-socialmedia-04"></a></li>
                     </ul>
-                    <div class="footer-title">Social Networks 2</div>
+                    <div class="footer-title">Social Networks 2</div>                    
                     <ul class="list-inline socials">
                         <li><a href="https://www.facebook.com/mitienda" target="_blank"><span class="icon icon-socialmedia-08"></span></a></li>
-                        <li><a href="https://www.twitter.com/mitienda" target="_blank"><span class="icon icon-socialmedia-07"></span></a></li>
+                        <li><a href="https://www.twitter.com/mitienda" target="_blank"><span class="icon icon-socialmedia-07"></span></a></li>                       
                         <li><a href="https://plus.google.com/u/0/" target="_blank"><span class="icon icon-socialmedia-16"></span></a></li>
                         <li><a href="https://www.pinterest.com/mitienda" target="_blank"><span class="icon icon-socialmedia-04"></span></a></li>
                     </ul>
@@ -130,11 +128,11 @@ include 'header.inc.php';
                     <div class="footer-title">Our Contacts</div>
                     <ul class="list-unstyled">
                         <li>
-                            <span class="icon icon-chat-messages-14"></span>
+                            <span class="icon icon-chat-messages-14"></span> 
                             <a href="mailto:info@startup.ly">info@mitienda.ovh</a>
                         </li>
                         <li>
-                            <span class="icon icon-seo-icons-34"></span>
+                            <span class="icon icon-seo-icons-34"></span> 
                             2901 Marmora road, Glassgow, Seattle, WA 98122-1090
                         </li>
                         <li>
@@ -151,16 +149,16 @@ include 'header.inc.php';
         </div>
         <div class="copyright">@jrcajide 2016. All rights reserved</div>
     </footer>
-
+    
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
-
+    
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
-    <![endif]-->
-    <!--[if (gte IE 9) | (!IE)]><!-->
+    <![endif]-->  
+    <!--[if (gte IE 9) | (!IE)]><!-->  
         <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
-    <!--<![endif]-->
-
+    <!--<![endif]-->  
+    
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
