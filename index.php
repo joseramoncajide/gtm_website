@@ -45,6 +45,7 @@ if (defined('GTM_CODE')) {
     echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
     echo "})(window,document,'script','dataLayer','GTM_CODE');</script>";
     echo "<!-- End Google Tag Manager -->";
+    
 }
 ?>
 <!-- Google Tag Manager -->
