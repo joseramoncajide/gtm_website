@@ -56,7 +56,7 @@ if (defined('GTM_CODE')) {
 <body id="landing-page">
 <?php
 if (defined('GTM_CODE')) {
-  echo"<!-- Google Tag Manager (noscript) -->";
+  echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
   echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
   echo GTM_CODE;
   echo'"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
