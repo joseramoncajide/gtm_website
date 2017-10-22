@@ -23,7 +23,7 @@ require "crm.inc.php";
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/toastr.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-    
+
     <!--[if lt IE 9]>
         <script src="assets/js/html5.js"></script>
         <script src="assets/js/respond.min.js"></script>
@@ -35,13 +35,25 @@ require "crm.inc.php";
 <?php
 include 'dataLayer.inc.php';
 ?>
-   
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','<?php
+echo GTM_CODE;
+?>');</script>
+<!-- End Google Tag Manager -->
 </head>
 
 <body id="landing-page">
-<?php
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php
 echo GTM_CODE;
-?>
+?>"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
 
 
@@ -51,39 +63,39 @@ echo GTM_CODE;
     <div id="mask">
         <div id="loader"></div>
     </div>
-        
+
 <?php
 include 'header.inc.php';
 ?>
- 
- <!-- 
- 
+
+ <!--
+
  $('document').ready(function(){
   $('.btn').css( "width", "100%" );
 });
 
 var d = document.getElementById("div1");
 d.className = d.className + " otherclass";
-    
-    
+
+
 //Javascript
 var x = document.getElementsByClassName("btn-default");
 x[0].className = x[0].className + ' btn-primary';
-    
-    
+
+
     x[0].innerText = "Hola";
-	
+
 	var e = document.getElementById('hero').style.backgroundImage = 'url(http://master.milanding.ovh/assets/img/background/smb_owner.jpg)';;
 
-	
+
 	//jQuery
 	$(".btn-default").first().addClass("btn-primary");
 	$(".btn-default").first().text("Register in one step");
 
-   $('.btn-default')[0].innerHTML; 
-   
+   $('.btn-default')[0].innerHTML;
+
    $('#hero').css("background", "url('http://master.milanding.ovh/assets/img/background/smb_owner.jpg') top center no-repeat");
-   
+
 .register-version.static-header {
   background: url('../img/background/smb_owner.jpg') top center no-repeat;
   -webkit-background-size: cover;
@@ -93,7 +105,7 @@ x[0].className = x[0].className + ' btn-primary';
   background-attachment: fixed;
   min-height: 1155px;
   position: relative;
-}   
+}
 -->
 
 
@@ -111,27 +123,27 @@ x[0].className = x[0].className + ' btn-primary';
 
 
 $(document).on('DOMNodeInserted', '.toast-success', function(e) {
-    
+
     //Evento
     //dataLayer.push({event:'gaevent', eventCategory:'Conversion', eventAction: 'Contactar', eventLabel: ''});
-    
-    
+
+
     //Página virtual
     dataLayer.push({'event':'virtualPage', 'page': '/formulario_enviado', 'pageTitle': 'Gracias por registrarte'});
 
 });
 
 $(document).on('DOMNodeInserted', '.error', function(e) {
-	
+
 	//console.log(e.target);
-	
+
 	element = e.target;
-	
+
 	field = element.getAttribute('for');
-    
+
     dataLayer.push({'event':'gaEvent', 'eventCategory':'Errores en formularios', 'eventAction': 'Registro', 'eventLabel': field + ':' + element.textContent});
-    
-    
+
+
 });
 */
 /*
@@ -139,17 +151,17 @@ $(document).on('DOMNodeInserted', '.error', function(e) {
 document.addEventListener("DOMContentLoaded", function() {
 
 
-  
+
   var success = document.querySelector(".toast-success");
   var fail = document.querySelector(".toast-error");
 
   success.addEventListener('DOMNodeInserted', function(evt) {
 	dataLayer.push({'event':'eventga','eventCategory':'OK','eventAction': 'Contactar','eventLabel': ''});
   }, false);
-  
+
   fail.addEventListener('DOMNodeInserted', function(evt) {
 	dataLayer.push({'event':'eventga','eventCategory':'OK','eventAction': 'Contactar','eventLabel': ''});
-  }, false);  
+  }, false);
 
 }, false);
 
@@ -165,12 +177,12 @@ function getClientID() {
         return trackers[i].get('clientId');
       }
     }
-  } catch(e) {}  
+  } catch(e) {}
   return 'false';
 }
 
 try {
-	var frm =  document.getElementById('registration');	
+	var frm =  document.getElementById('registration');
 	var clientid = getClientID();
 	if (typeof(frm) != 'undefined' && frm != null && clientid != null) {
 		var input = document.createElement("input");
@@ -197,27 +209,27 @@ try {
             </ul>
         </div>
     </div>
-    
 
-    
+
+
     <a id="showHere"></a>
- 
 
-    
-  
-    
+
+
+
+
 	<section id="about" class="section dark">
         <div class="container">
-		
+
             <ul class="nav nav-tabs alt">
                 <li class="active"><a href="#first-tab-alt" data-toggle="tab">FIRST TAB</a></li>
                 <li><a href="#second-tab-alt" data-toggle="tab">SECOND TAB</a></li>
                 <li><a href="#third-tab-alt" data-toggle="tab">THIRD TAB</a></li>
             </ul>
-                    
+
             <div class="tab-content alt">
 				<div class="tab-pane active" id="first-tab-alt">
-					<div class="section-content row">        
+					<div class="section-content row">
 								<div class="col-sm-6 animated hiding" data-animation="fadeInLeft">
 									<img src="assets/img/features/people.jpg" class="img-responsive" alt="process 3" />
 								</div>
@@ -233,9 +245,9 @@ try {
 								</div>
 					</div>
                 </div>
-					
+
                 <div class="tab-pane" id="second-tab-alt">
-                           <div class="section-content row">                
+                           <div class="section-content row">
 								<div class="col-sm-6 pull-right animated hiding" data-animation="fadeInRight">
 									<img src="assets/img/features/phone.jpg" class="img-responsive pull-right" alt="process 2" />
 								</div>
@@ -286,17 +298,17 @@ try {
 					</div>
 					<br/>
 					<br/>
-				</div>	
+				</div>
 			</div>
         </div>
     </section>
-    
-    <hr class="no-margin" />
-    
 
-    
+    <hr class="no-margin" />
+
+
+
     <section id="features" class="section inverted">
-    
+
         <div class="container">
             <div class="section-content">
                 <div id="featuredTab">
@@ -329,7 +341,7 @@ try {
                           </a>
                       </li>
                     </ul>
-                    
+
                     <div class="tab-content animated hiding" data-animation="fadeInLeft">
                       <div class="tab-pane in active" id="home"><img src="assets/img/features/rich_features_1.png" class="img-responsive animated hiding" data-animation="fadeInLeft" alt="macbook" /></div>
                       <div class="tab-pane" id="profile"><img src="assets/img/features/rich_features_2.png" class="img-responsive animated hiding" data-animation="fadeInLeft" alt="macbook" /></div>
@@ -339,8 +351,8 @@ try {
             </div>
         </div>
     </section>
-    
-	
+
+
 
 	<section id="awards" class="section dark">
         <div class="container">
@@ -351,23 +363,23 @@ try {
                     <br />dfs sit atmet sit dolor greand fdanrh sdfs
                 </div>
             </div>
-            <div class="section-content">                
+            <div class="section-content">
                 <ul class="list-inline logos">
-                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="0" src="assets/img/logos/award-5.jpg" alt="mashable" /></a></li> 
-                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="400" src="assets/img/logos/award-3.jpg" alt="virgin" /></a></li> 
-					<li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="600" src="assets/img/logos/award-4.jpg" alt="forbes" /></a></li> 
-                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="800" src="assets/img/logos/award-1.jpg" alt="microsoft" /></a></li> 					
+                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="0" src="assets/img/logos/award-5.jpg" alt="mashable" /></a></li>
+                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="400" src="assets/img/logos/award-3.jpg" alt="virgin" /></a></li>
+					<li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="600" src="assets/img/logos/award-4.jpg" alt="forbes" /></a></li>
+                    <li><a href="#" target="_blank"><img class="animated hiding" data-animation="fadeInUp" data-delay="800" src="assets/img/logos/award-1.jpg" alt="microsoft" /></a></li>
                 </ul>
             </div>
         </div>
     </section>
-    
 
 
 
-	
 
-    
+
+
+
     <section id="guarantee" class="long-block light">
         <div class="container">
             <div class="col-md-12 col-lg-9">
@@ -377,13 +389,13 @@ try {
                     <p class="thin">Take a professional training to become a Google Tag Manager specialist with this hads-on training course.</p>
                 </article>
             </div>
-			
+
             <div class="col-md-12 col-lg-3">
                 <a href="http://www.google.es/?utm_source=ksmasteraw&utm_medium=link&utm_campaign=gtmninja" class="btn btn-default">Exit link</a>
             </div>
         </div>
     </section>
- 
+
 	<section id="team" class="section dark">
         <div class="container">
             <div class="section-header animated hiding" data-animation="fadeInDown">
@@ -406,8 +418,8 @@ try {
                             </div>
 							<span class="h7 highlight">Woo Album #3</span>
 							<p class="thin">9 €</p>
-                        </div>  
-						
+                        </div>
+
 						<div class="member col-md-3 col-sm-3 col-xs-6 animated hiding" data-animation="fadeInDown" data-delay="250">
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
@@ -418,8 +430,8 @@ try {
                             </div>
 							<span class="h7 highlight">Woo Logo</span>
 							<p class="thin">18 €</p>
-                        </div>     
-						
+                        </div>
+
 						<div class="member col-md-3 col-sm-3 col-xs-6 animated hiding" data-animation="fadeInDown" data-delay="500">
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
@@ -430,8 +442,8 @@ try {
                             </div>
 							<span class="h7 highlight">Woo Ninja</span>
 							<p class="thin">15 €</p>
-                        </div>                        
-						
+                        </div>
+
 						<div class="member col-md-3 col-sm-3 col-xs-6 animated hiding" data-animation="fadeInDown" data-delay="750">
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
@@ -447,7 +459,7 @@ try {
             </div>
         </div>
     </section>
-    
+
     <footer id="footer" class="footer light">
         <div class="container">
             <div class="footer-content row">
@@ -462,14 +474,14 @@ try {
                     <div class="footer-title">Social Networks 1</div>
                     <ul class="list-inline socials">
                         <li><a href="https://www.facebook.com/mitienda" target="_blank" class="icon icon-socialmedia-08"></a></li>
-                        <li><a href="https://www.twitter.com/mitienda" target="_blank" class="icon icon-socialmedia-07"></a></li>             
+                        <li><a href="https://www.twitter.com/mitienda" target="_blank" class="icon icon-socialmedia-07"></a></li>
                         <li><a href="https://plus.google.com/u/0/" target="_blank" class="icon icon-socialmedia-16"></a></li>
                         <li><a href="https://www.pinterest.com/mitienda" target="_blank" class="icon icon-socialmedia-04"></a></li>
                     </ul>
-                    <div class="footer-title">Social Networks 2</div>                    
+                    <div class="footer-title">Social Networks 2</div>
                     <ul class="list-inline socials">
                         <li><a href="https://www.facebook.com/mitienda" target="_blank"><span class="icon icon-socialmedia-08"></span></a></li>
-                        <li><a href="https://www.twitter.com/mitienda" target="_blank"><span class="icon icon-socialmedia-07"></span></a></li>                       
+                        <li><a href="https://www.twitter.com/mitienda" target="_blank"><span class="icon icon-socialmedia-07"></span></a></li>
                         <li><a href="https://plus.google.com/u/0/" target="_blank"><span class="icon icon-socialmedia-16"></span></a></li>
                         <li><a href="https://www.pinterest.com/mitienda" target="_blank"><span class="icon icon-socialmedia-04"></span></a></li>
                     </ul>
@@ -479,11 +491,11 @@ try {
                     <div class="footer-title">Our Contacts</div>
                     <ul class="list-unstyled">
                         <li>
-                            <span class="icon icon-chat-messages-14"></span> 
+                            <span class="icon icon-chat-messages-14"></span>
                             <a href="mailto:info@startup.ly">info@mitienda.ovh</a>
                         </li>
                         <li>
-                            <span class="icon icon-seo-icons-34"></span> 
+                            <span class="icon icon-seo-icons-34"></span>
                             28028, Madrid (Spain)
                         </li>
                         <li>
@@ -500,17 +512,17 @@ try {
         </div>
         <div class="copyright">@jrcajide 2017. All rights reserved.</div>
     </footer>
-    
+
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
 
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
-    <![endif]-->  
-    <!--[if (gte IE 9) | (!IE)]><!-->  
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
         <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
-    <!--<![endif]-->  
-    
+    <!--<![endif]-->
+
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
@@ -524,8 +536,8 @@ try {
     <script type="text/javascript" src="assets/js/headhesive.min.js"></script>
 	<script type="text/javascript" src="assets/mailchimp/js/mailing-list.js"></script>
     <script type="text/javascript" src="assets/js/scripts.js"></script>
-    
+
     <!-- script type="text/javascript" src="assets/js/ecommerce.js"></script -->
-    
+
 </body>
 </html>
