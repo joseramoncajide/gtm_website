@@ -383,7 +383,7 @@ try {
 
 
 
-    <section id="guarantee" class="long-block light">
+    <section id="banner_horizontal" class="long-block light">
         <div class="container">
             <div class="col-md-12 col-lg-9">
 				<i class="icon icon-seo-icons-24 pull-left"></i>
