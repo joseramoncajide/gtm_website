@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/toastr.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-    
+
     <!--[if lt IE 9]>
         <script src="assets/js/html5.js"></script>
         <script src="assets/js/respond.min.js"></script>
@@ -35,15 +35,32 @@
 <?php
 include 'dataLayer.inc.php';
 ?>
-<style>
 
-</style>
+<?php
+if (defined('GTM_CODE')) {
+    echo"<!-- Google Tag Manager -->", PHP_EOL;
+    echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':";
+    echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
+    echo "})(window,document,'script','dataLayer','";
+    echo GTM_CODE;
+    echo"');</script>";
+    echo "<!-- End Google Tag Manager -->", PHP_EOL;
+
+}
+?>
 </head>
-
 <body id="landing-page">
-
-
-
+<?php
+if (defined('GTM_CODE')) {
+  echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
+  echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
+  echo GTM_CODE;
+  echo'"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>', PHP_EOL;
+  echo"<!-- End Google Tag Manager (noscript) -->", PHP_EOL;
+}
+?>
 
 
 
@@ -51,26 +68,26 @@ include 'dataLayer.inc.php';
     <div id="mask">
         <div id="loader"></div>
     </div>
-        
+
 <?php
 include 'header.inc.php';
 ?>
-    
-    
+
+
                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScTyEtJWP7g3SqXL570z_NHuqkn8INR1zk8uz_K5sfAkSxl9g/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-    
 
-    
+
+
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
-    
+
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
-    <![endif]-->  
-    <!--[if (gte IE 9) | (!IE)]><!-->  
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
         <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
-    <!--<![endif]-->  
-    
+    <!--<![endif]-->
+
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
     <script type="text/javascript" src="assets/js/jquery.appear.js"></script>

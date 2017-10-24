@@ -23,7 +23,7 @@ require "crm.inc.php";
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/toastr.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-    
+
     <!--[if lt IE 9]>
         <script src="assets/js/html5.js"></script>
         <script src="assets/js/respond.min.js"></script>
@@ -35,14 +35,32 @@ require "crm.inc.php";
 <?php
 include 'dataLayer.inc.php';
 ?>
-   
-</head>
 
+<?php
+if (defined('GTM_CODE')) {
+    echo"<!-- Google Tag Manager -->", PHP_EOL;
+    echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':";
+    echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
+    echo "})(window,document,'script','dataLayer','";
+    echo GTM_CODE;
+    echo"');</script>";
+    echo "<!-- End Google Tag Manager -->", PHP_EOL;
+
+}
+?>
+</head>
 <body id="landing-page">
 <?php
-echo GTM_CODE;
+if (defined('GTM_CODE')) {
+  echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
+  echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
+  echo GTM_CODE;
+  echo'"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>', PHP_EOL;
+  echo"<!-- End Google Tag Manager (noscript) -->", PHP_EOL;
+}
 ?>
-
 
 
 
@@ -51,17 +69,17 @@ echo GTM_CODE;
     <div id="mask">
         <div id="loader"></div>
     </div>
-        
+
 <?php
 include 'header.inc.php';
 ?>
-    
+
     <div id="hero" class="static-header light">
         <div class="text-heading">
             <h1>A simple <span class="highlight">web form</span> </h1>
             <p>Learn to track <span class="highlight">form submissions</span>  <span>.</span></p>
         </div>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
@@ -107,24 +125,24 @@ include 'header.inc.php';
                         </div>
                         <input type="submit" class="btn btn-primary btn-lg btn-block">
                     </form>
-                    
+
                     <p class="agree-text">By clicking you agree to our Terms of Service, Privacy Policy & Refund Policy.<br />
   </p>
                 </div>
             </div>
         </div>
-        
-    
-    
+
+
+
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
-    
+
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
-    <![endif]-->  
-    <!--[if (gte IE 9) | (!IE)]><!-->  
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
         <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
-    <!--<![endif]-->  
-    
+    <!--<![endif]-->
+
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
     <script type="text/javascript" src="assets/js/jquery.appear.js"></script>

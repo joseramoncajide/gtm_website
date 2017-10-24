@@ -36,11 +36,30 @@ require "crm.inc.php";
 include 'dataLayer.inc.php';
 ?>
 
-</head>
+<?php
+if (defined('GTM_CODE')) {
+    echo"<!-- Google Tag Manager -->", PHP_EOL;
+    echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':";
+    echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
+    echo "})(window,document,'script','dataLayer','";
+    echo GTM_CODE;
+    echo"');</script>";
+    echo "<!-- End Google Tag Manager -->", PHP_EOL;
 
+}
+?>
+</head>
 <body id="landing-page">
 <?php
-echo GTM_CODE;
+if (defined('GTM_CODE')) {
+  echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
+  echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
+  echo GTM_CODE;
+  echo'"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>', PHP_EOL;
+  echo"<!-- End Google Tag Manager (noscript) -->", PHP_EOL;
+}
 ?>
 
 

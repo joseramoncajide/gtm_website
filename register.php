@@ -23,7 +23,7 @@ require "crm.inc.php";
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/toastr.min.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-    
+
     <!--[if lt IE 9]>
         <script src="assets/js/html5.js"></script>
         <script src="assets/js/respond.min.js"></script>
@@ -35,13 +35,32 @@ require "crm.inc.php";
 <?php
 include 'dataLayer.inc.php';
 ?>
-</head>
 
+<?php
+if (defined('GTM_CODE')) {
+    echo"<!-- Google Tag Manager -->", PHP_EOL;
+    echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':";
+    echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
+    echo "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=";
+    echo "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);";
+    echo "})(window,document,'script','dataLayer','";
+    echo GTM_CODE;
+    echo"');</script>";
+    echo "<!-- End Google Tag Manager -->", PHP_EOL;
+
+}
+?>
+</head>
 <body id="landing-page">
 <?php
-echo GTM_CODE;
+if (defined('GTM_CODE')) {
+  echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
+  echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
+  echo GTM_CODE;
+  echo'"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>', PHP_EOL;
+  echo"<!-- End Google Tag Manager (noscript) -->", PHP_EOL;
+}
 ?>
-
 
 
 
@@ -50,18 +69,18 @@ echo GTM_CODE;
     <div id="mask">
         <div id="loader"></div>
     </div>
-        
+
 <?php
 include 'header.inc.php';
 ?>
-    
-    
+
+
     <div id="hero" class="static-header light">
         <div class="text-heading">
             <h1>Sign up for a <span class="highlight">free</span> account</h1>
             <!-- p>Stop pirates from stealing your products and <span>increase sales now!</span></p -->
         </div>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
@@ -89,7 +108,7 @@ include 'header.inc.php';
                             <div class="col-sm-2 col-xs-12">
                                 <input type="text" class="form-control required" name="day" id="day" placeholder="DD">
                             </div>
-                        </div>                        
+                        </div>
                         <div class="form-group">
                             <label for="username" class="col-sm-3 col-xs-12 control-label">User name</label>
                             <div class="col-sm-9 col-xs-12">
@@ -114,24 +133,24 @@ include 'header.inc.php';
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Get started</button>
                     </form>
-                    
+
                     <p class="agree-text">By clicking you agree to our Terms of Service, Privacy Policy & Refund Policy.<br />
                     </p>
                 </div>
             </div>
         </div>
-        
-  
-    
+
+
+
     <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
-    
+
     <!--[if lt IE 9]>
         <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
-    <![endif]-->  
-    <!--[if (gte IE 9) | (!IE)]><!-->  
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
         <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
-    <!--<![endif]-->  
-    
+    <!--<![endif]-->
+
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
     <script type="text/javascript" src="assets/js/jquery.appear.js"></script>
@@ -154,8 +173,8 @@ include 'header.inc.php';
     app.el['loader']         = $('#loader');
     app.el['mask']           = $('#mask');
     app.el['loader'].delay(700).fadeOut();
-    app.el['mask'].delay(1200).fadeOut("slow");    
-    
+    app.el['mask'].delay(1200).fadeOut("slow");
+
 // Form validation - sign up
 	toastr.options = {"positionClass": "toast-top-full-width"};
     if( $('.form-register').length ) {
@@ -196,13 +215,13 @@ include 'header.inc.php';
             equalTo: "Please enter the same password as above"
           },
           email: "Please enter a valid email address"
-        },      
+        },
         submitHandler: function(form) {
        		//form.submit();
 
-       		
+
        		/*
-  
+
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
                     data: {"entry.1156608205": $('#fullname').val(), "entry.1346860195": $('#username').val(), "entry.75082348": $('#email').val()},
@@ -220,10 +239,10 @@ include 'header.inc.php';
                         }
                     }
                 });
-            
+
             */
-                
-            
+
+
           var $this = $(form);
           $.ajax({
             url: $this.attr('action'),
@@ -241,95 +260,95 @@ include 'header.inc.php';
           .fail(function() {
             //toastr.error('An error occured. Please try again later.');
           });
-          
-        }      
+
+        }
       });
     }
 })();
 
 
     $('#registration').one('submit',function(e){
-    
+
     	e.preventDefault();
-   
+
    		console.log("-> Formulario enviado por el usuario");
-    	
+
         var inputEmail = $('#email').val();
-        
+
         console.log("-> Email:" + inputEmail);
-        
+
         var inputYear = $('#year').val();
-        
-        console.log("-> Year:" + inputYear);        
+
+        console.log("-> Year:" + inputYear);
 
         var inputMonth = $('#month').val();
-        
-        console.log("-> Month:" + inputMonth);   
+
+        console.log("-> Month:" + inputMonth);
 
         var inputDay = $('#day').val();
-        
-        console.log("-> Day:" + inputDay);   
-        
+
+        console.log("-> Day:" + inputDay);
+
         var inputFullName = $('#fullname').val();
-        
+
         console.log("-> Nombre:" + inputFullName);
-        
+
         var inputUserName = $('#username').val();
-        
+
         console.log("-> Usuario:" + inputUserName);
-        
+
         var inputPassword = String($('#password').val());
-        
+
         console.log("-> Clave:" + inputPassword);
-        
+
         var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
 
         var clientId = String(clientIdSplit[0]);
-        
-        console.log("-> clientId:" + clientId);        
-        
-        
-        
-        
+
+        console.log("-> clientId:" + clientId);
+
+
+
+
         if( /(.+)@(.+){2,}\.(.+){2,}/.test(inputEmail) ){
-        	
+
         	console.log('El email es válido');
-        	
+
         	//var clientid = getClientId();
-        	
+
         	//var baseURL = 'https://docs.google.com/forms/d/1FAIpQLSezJPbCTjlxCktTpNwi9nDRsinPM3M2mS_yC9-SfZkeCrn3zA/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry.1755877516='+JSON.stringify(clientid)+'';
         	//var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
         	var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+'';
 
-        	
+
         	var submitRef = '&submit=Submit';
-        	
+
         	var submitURL = (baseURL + submitRef);
-        	
+
         	$(this)[0].action=submitURL;
-        	
+
         	//form.submit;
-        	
+
         	$(this).submit();
-        	
+
         	//$('#email').addClass('active').val('Thank You!');
-        	
-        	
+
+
         	//$("#myModal").modal('show');
-        	
+
 			var myDate = new Date();
 			myDate.setMonth(myDate.getMonth() + 12);
 			document.cookie = "logged_user=" + inputUserName + ";expires=" + myDate  + ";domain=.milanding.ovh;path=/";
-        	
-        	window.setTimeout( function(){	
+
+        	window.setTimeout( function(){
         			window.location.replace("index.php");
         		}, 900 );
-        
+
         } else {
-        	
+
         	$('#error').css('display', 'block');
-        	
-        	
+
+
         }
     });
 </script>
@@ -337,43 +356,43 @@ include 'header.inc.php';
 <!-- script type="text/javascript">
             function postToGoogle() {
    var inputEmail = $('#email').val();
-        
+
         console.log("-> Email:" + inputEmail);
-        
+
         var inputYear = $('#year').val();
-        
-        console.log("-> Year:" + inputYear);        
+
+        console.log("-> Year:" + inputYear);
 
         var inputMonth = $('#month').val();
-        
-        console.log("-> Month:" + inputMonth);   
+
+        console.log("-> Month:" + inputMonth);
 
         var inputDay = $('#day').val();
-        
-        console.log("-> Day:" + inputDay);   
-        
+
+        console.log("-> Day:" + inputDay);
+
         var inputFullName = $('#fullname').val();
-        
+
         console.log("-> Nombre:" + inputFullName);
-        
+
         var inputUserName = $('#username').val();
-        
+
         console.log("-> Usuario:" + inputUserName);
-        
+
         var inputPassword = String($('#password').val());
-        
+
         console.log("-> Clave:" + inputPassword);
-        
+
         var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
 
         var clientId = String(clientIdSplit[0]);
- 
- 
+
+
  //formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+''
- 
+
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
-                
+
                     data: {"entry.1156608205": inputFullName, "entry.1346860195": inputUserName, "entry.19749728_year": inputYear, "entry.19749728_month": inputMonth, "entry.19749728_day": inputDay, "emailAddress": inputEmail, "entry.2062009925": inputPassword, "entry.1755877516": clientId},
                     type: "POST",
                     dataType: "xml",
@@ -387,7 +406,7 @@ include 'header.inc.php';
                     }
                 });
             }
-             
+
             $(document).ready(function(){
                 $('#hero').submit(function() {
                     postToGoogle();
