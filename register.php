@@ -164,7 +164,7 @@ include 'header.inc.php';
     <!--script type="text/javascript" src="assets/js/scripts.js"></script-->
 
 
-<!-- script>
+<script>
 
 (function(){
     window.app 			         = {el : {}, fn : {}};
@@ -351,9 +351,9 @@ include 'header.inc.php';
 
         }
     });
-</script -->
+</script>
 
-<script type="text/javascript">
+<!-- script type="text/javascript">
             function postToGoogle() {
    var inputEmail = $('#email').val();
 
@@ -413,7 +413,7 @@ include 'header.inc.php';
                     return false;
                 });
             });
-        </script>
+        </script -->
 <iframe src="about:blank" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 
 </body>
