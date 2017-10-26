@@ -28,15 +28,15 @@ if($_SERVER['REQUEST_URI'] == '/' OR $_SERVER['REQUEST_URI'] == '/index.php') {
                     </ul>
 
                     <ul class="navigation-bar navigation-bar-right">
-                                        <?php 
+                                        <?php
                     if ($_COOKIE['logged_user'] == '') {
 						echo '<li class="featured"><a href="register.php">Sign Up</a></li>';
                     } else {
-						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';            
+						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';
                     }
                     ?>
 
-                    </ul>  
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -64,15 +64,17 @@ if($_SERVER['REQUEST_URI'] == '/' OR $_SERVER['REQUEST_URI'] == '/index.php') {
                     </ul>
 
                     <ul class="navigation-bar navigation-bar-right">
-                                        <?php 
+                      <!--LOGIN-->
+                                        <?php
+                                        //echo $USER_EXISTS;echo $_COOKIE['logged_user'];
                     if ($_COOKIE['logged_user'] == '') {
 						echo '<li class="featured"><a href="register.php">Sign Up</a></li>';
                     } else {
-						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';            
+						echo '<li class="menu-item"><a href="#">Welcome '.USER_NAME.'</a></li>';
                     }
                     ?>
 
-                    </ul>  
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -86,7 +88,7 @@ if($_SERVER['REQUEST_URI'] == '/' OR $_SERVER['REQUEST_URI'] == '/index.php') {
 
 
 
-<!-- 
+<!--
 COOKIES
 https://gist.github.com/joseramoncajide/3003c75149743c430bf234701a6dddbc
 -->

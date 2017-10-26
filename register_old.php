@@ -78,6 +78,7 @@ include 'header.inc.php';
     <div id="hero" class="static-header light">
         <div class="text-heading">
             <h1>Sign up for a <span class="highlight">free</span> account</h1>
+            <!-- p>Stop pirates from stealing your products and <span>increase sales now!</span></p -->
         </div>
 
         <div class="container">
@@ -216,60 +217,51 @@ include 'header.inc.php';
           email: "Please enter a valid email address"
         },
         submitHandler: function(form) {
+       		//form.submit();
 
-            var inputEmail = $('#email').val(); console.log("-> Email:" + inputEmail);
 
-            var inputYear = $('#year').val(); console.log("-> Year:" + inputYear);
+       		/*
 
-            var inputMonth = $('#month').val(); console.log("-> Month:" + inputMonth);
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
+                    data: {"entry.1156608205": $('#fullname').val(), "entry.1346860195": $('#username').val(), "entry.75082348": $('#email').val()},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function() {
+                            //Success message
+                            console.log('OK 1');
+                            toastr.success('Thank you for signing up.');
+                        },
+                        200: function() {
+                            //Success Message
+                            console.log('OK 2');
+                        }
+                    }
+                });
 
-            var inputDay = $('#day').val(); console.log("-> Day:" + inputDay);
+            */
 
-            var fechaNac = inputYear+'/'+inputMonth+'/'+inputDay; console.log("-> fechaNac:" + fechaNac);
-
-            var inputFullName = $('#fullname').val(); console.log("-> Nombre:" + inputFullName);
-
-            var inputUserName = $('#username').val(); console.log("-> Usuario:" + inputUserName);
-
-            var inputPassword = String($('#password').val()); console.log("-> Clave:" + inputPassword);
-
-            var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
-            var clientId = String(clientIdSplit[0]);
-            console.log("-> clientId:" + clientId);
-
-            var values = {
-              'Email': inputEmail,
-              'Nombre': inputFullName,
-              'Fecha_nac': fechaNac,
-              'Usuario': inputUserName,
-              'Password': inputPassword,
-              'Cookie_ga': clientId
-            };
 
           var $this = $(form);
-
           $.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbyqkcww_XyzAOqe2tvbS8QhWhVlVqbjNuKmkA6dvPR8xCkLs8c/exec',
+            url: $this.attr('action'),beforeSend: function (xhr) {
+          xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://milanding.ovh');
+          xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+        },
             type: 'POST',
-            //data: $this.serialize(),
-            data: values,
+            data: $this.serialize(),
           })
           .done(function(msg) {
-              console.log('Formulario enviado correctamente');
-              var myDate = new Date();
-            	myDate.setMonth(myDate.getMonth() + 12);
-            	document.cookie = "logged_user=" + inputUserName + ";expires=" + myDate  + ";domain=.milanding.ovh;path=/";
-              console.log('Cookie creada para ' + inputUserName);
+            if( msg == 'ok' ) {
               toastr.success('Thank you for signing up.');
-
-              window.setTimeout( function(){
-            			window.location.replace("index.php");
-            		}, 900 );
-              //$this[0].reset();
-
+              $this[0].reset();
+            } else {
+              toastr.error('An error occured. Please try again later.');
+            }
           })
           .fail(function() {
-            toastr.error('An error occured. Please try again later.');
+            //toastr.error('An error occured. Please try again later.');
           });
 
         }
@@ -278,8 +270,154 @@ include 'header.inc.php';
 })();
 
 
+    $('#registration').one('submit',function(e){
+
+    	e.preventDefault();
+
+   		console.log("-> Formulario enviado por el usuario");
+
+        var inputEmail = $('#email').val();
+
+        console.log("-> Email:" + inputEmail);
+
+        var inputYear = $('#year').val();
+
+        console.log("-> Year:" + inputYear);
+
+        var inputMonth = $('#month').val();
+
+        console.log("-> Month:" + inputMonth);
+
+        var inputDay = $('#day').val();
+
+        console.log("-> Day:" + inputDay);
+
+        var inputFullName = $('#fullname').val();
+
+        console.log("-> Nombre:" + inputFullName);
+
+        var inputUserName = $('#username').val();
+
+        console.log("-> Usuario:" + inputUserName);
+
+        var inputPassword = String($('#password').val());
+
+        console.log("-> Clave:" + inputPassword);
+
+        var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+
+        var clientId = String(clientIdSplit[0]);
+
+        console.log("-> clientId:" + clientId);
+
+
+
+
+        if( /(.+)@(.+){2,}\.(.+){2,}/.test(inputEmail) ){
+
+        	console.log('El email es válido');
+
+        	//var clientid = getClientId();
+
+        	//var baseURL = 'https://docs.google.com/forms/d/1FAIpQLSezJPbCTjlxCktTpNwi9nDRsinPM3M2mS_yC9-SfZkeCrn3zA/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry.1755877516='+JSON.stringify(clientid)+'';
+        	//var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName+'&entry_75082348=' + inputEmail+ '&entry_2062009925=' +inputPassword+'';
+        	//var baseURL = 'https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+'';
+          var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSezJPbCTjlxCktTpNwi9nDRsinPM3M2mS_yC9-SfZkeCrn3zA/formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+'';
+
+        	var submitRef = '&submit=Submit';
+
+        	var submitURL = (baseURL + submitRef);
+
+        	$(this)[0].action=submitURL;
+
+        	//form.submit;
+
+        	$(this).submit();
+
+        	//$('#email').addClass('active').val('Thank You!');
+
+
+        	//$("#myModal").modal('show');
+
+			var myDate = new Date();
+			myDate.setMonth(myDate.getMonth() + 12);
+			document.cookie = "logged_user=" + inputUserName + ";expires=" + myDate  + ";domain=.milanding.ovh;path=/";
+
+        	window.setTimeout( function(){
+        			window.location.replace("index.php");
+        		}, 900 );
+
+        } else {
+
+        	$('#error').css('display', 'block');
+
+
+        }
+    });
 </script>
 
+<!-- script type="text/javascript">
+            function postToGoogle() {
+   var inputEmail = $('#email').val();
+
+        console.log("-> Email:" + inputEmail);
+
+        var inputYear = $('#year').val();
+
+        console.log("-> Year:" + inputYear);
+
+        var inputMonth = $('#month').val();
+
+        console.log("-> Month:" + inputMonth);
+
+        var inputDay = $('#day').val();
+
+        console.log("-> Day:" + inputDay);
+
+        var inputFullName = $('#fullname').val();
+
+        console.log("-> Nombre:" + inputFullName);
+
+        var inputUserName = $('#username').val();
+
+        console.log("-> Usuario:" + inputUserName);
+
+        var inputPassword = String($('#password').val());
+
+        console.log("-> Clave:" + inputPassword);
+
+        var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+
+        var clientId = String(clientIdSplit[0]);
+
+
+ //formResponse?entry_1156608205=' + inputFullName + '&entry_1346860195=' +inputUserName + '&entry_19749728_year=' +inputYear+ '&entry_19749728_month=' +inputMonth+ '&entry_19749728_day=' +inputDay+'&emailAddress=' + inputEmail+ '&entry_2062009925=' +inputPassword+ '&entry_1755877516=' +clientId+''
+
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/1W1YoM6o5cCrdt1j6CHWE0E4uOlR6fufzkgU22Frjcws/formResponse",
+
+                    data: {"entry.1156608205": inputFullName, "entry.1346860195": inputUserName, "entry.19749728_year": inputYear, "entry.19749728_month": inputMonth, "entry.19749728_day": inputDay, "emailAddress": inputEmail, "entry.2062009925": inputPassword, "entry.1755877516": clientId},
+                    type: "POST",
+                    dataType: "xml",
+                    statusCode: {
+                        0: function() {
+                            //Success message
+                        },
+                        200: function() {
+                            //Success Message
+                        }
+                    }
+                });
+            }
+
+            $(document).ready(function(){
+                $('#hero').submit(function() {
+                    postToGoogle();
+                    return false;
+                });
+            });
+        </script -->
+<iframe src="about:blank" id="no-target" name="no-target" style="visibility:hidden"></iframe>
 
 </body>
 </html>
