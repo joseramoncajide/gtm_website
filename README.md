@@ -58,4 +58,5 @@ Service account example: https://github.com/google/google-api-php-client/blob/ma
 
 ## Registro - CRM
 
-http://noa.milanding.ovh/register.php
+Formulario de registro: http://noa.milanding.ovh/register.php
+Usuarios registrados: https://docs.google.com/spreadsheets/d/1avRQdRjIq6082CCvLtjwKD_448tEGr1gcRiN_ugujSU/edit#gid=0
