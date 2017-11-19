@@ -75,8 +75,8 @@ include 'header.inc.php';
 
     <div id="hero" class="static-header video-version light clearfix">
 		<div class="text-heading">
-            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">Do not wait &mdash; <span class="highlight">launch</span> your startup now!</h1>
-            <p class="animated hiding" data-animation="fadeInDown" data-delay="500">this tempate is flexible enough to suit any kind of startup or new business</p>
+            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">Do not wait &mdash; <span class="highlight">track</span> this video now!</h1>
+            <p class="animated hiding" data-animation="fadeInDown" data-delay="500">let's use GTM to track videos easily.</p>
         </div>
         <div class="video-wrapper">
             <div class="container">
