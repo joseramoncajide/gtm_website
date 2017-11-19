@@ -95,8 +95,8 @@ include 'header.inc.php';
             </div>
 
             <div class="col-md-12 col-lg-3">
-                <a href="/assets/downloads/a.pdf" class="btn btn-default" target="_blank">Download Cheatsheet (PDF)</a>
-            	<a href="/assets/downloads/b.png" class="btn btn-default" target="_blank">Download Cheatsheet (PNG)</a>
+                <a href="/assets/downloads/a.pdf" class="btn btn-default" target="_blank" title="Google Tag Manager - Custom Variables (pdf)">Download Cheatsheet (PDF)</a>
+            	<a href="/assets/downloads/b.png" class="btn btn-default" target="_blank"  title="Google Tag Manager - Custom Variables (png)">Download Cheatsheet (PNG)</a>
 
             </div>
         </div>
