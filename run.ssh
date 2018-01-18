@@ -1,3 +1,8 @@
-ssh root@95.85.14.190
+ssh root@95.85.26.52
 cd /var/www/html/
 git pull
+
+#TyM: Demo logs
+ssh root@milanding.ovh
+cd /var/log/apache2
+tail -f access.log
