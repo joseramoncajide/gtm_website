@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      var sp=sp||[];(function(){var e=["init","identify","track","trackLink","pageview"],t=function(e){return function(){sp.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)sp[e[n]]=t(e[n])})(),sp.load=function(e,o){sp._endpoint=e;if(o){sp.init(o)};var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d21ey8j28ejz92.cloudfront.net/analytics/v1/sp.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+     // sp.load("http://collector.jrcajide.com:3000"); // Data Collection Endpoint
+    </script>
+    
+    
+    <script>// <![CDATA[
+    
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+ga('create', 'UA-50425604-6', 'jrcajide.com');
+ga(function(tracker) { 
+  // Vamos a guardar la referencia a la funcion original que envía los hits 
+  var originalSendHitTask = tracker.get('sendHitTask'); 
+  // Modificamos la funcion sendHitTask para 
+  // enviar una copia local después de haber envíado 
+  // el hit a los servidores de Google Analytics 
+  tracker.set('sendHitTask', function(model) { 
+  // Vamos a recuperar los valores del payload, 
+  // para después añadirlos a nuestro hit local. 
+  var payLoad =model.get('hitPayload'); 
+  // Aquí envíamos le hit original generado por analytics.js 
+  originalSendHitTask(model); 
+  // Vamos a enviar una copia del hit a nuestro propio servidor 
+  var i=new Image(1,1); 
+  i.src="http://collector.jrcajide.com:3000/t.gif"+"?"+payLoad; 
+  i.onload=function() { return; } 
+  
+  	//var xmlHttp = new XMLHttpRequest();
+    //xmlHttp.open( "GET", 'http://collector.jrcajide.com:3000/track', false ); // false for synchronous request
+    //xmlHttp.send( payLoad );
+    //return xmlHttp.responseText;
+  
+  });
+});
+ga('send', 'pageview');
+// ]]></script>
+    
+  </head>
+  <body>
+    <button type="button" name="button" data-type="A">Button A</button>
+    <button type="button" name="button" data-type="B">Button B</button>
+
+    <select id="selector" name="Selector A">
+          <option value="Item 0" selected>Select an item</option>
+          <option value="Item 1">Item 1</option>
+          <option value="Item 2">Item 2</option>
+          <option value="Item 3">Item 3</option>
+    </select>
+    <br>
+    <a href="http://www.jquery.org">Outgoing link A</a>
+    <a href="http://events.jquery.org">Outgoing link B</a>
+
+<button id="button" onclick="ga('send', 'event', 'button', 'click', 'nav-buttons', {
+  'metric18': 8000
+});">Please click</button>
+
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                sp.track('Click Button', {
+                    button: $(this).data('type'),
+                    loggedin: false
+                });
+            });
+
+            $('#selector').change(function(){
+                sp.track('Select', {
+                    selector: $(this).attr('name'),
+                    option: $(this).find(":selected").text(),
+                    loggedin: true
+                })
+            })
+
+            sp.trackLink($('a').first(), 'Click Link A');
+            sp.trackLink($('a').last(), 'Click Link B');
+        });
+    </script>
+    <!--<img src="http://localhost:3000/t.gif" width="1" height="1">-->
+  </body>
+</html>
