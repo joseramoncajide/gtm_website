@@ -14,12 +14,12 @@
 
 
 library("analogsea")
+library(ssh)
 
 
 keys <- keys()
 keys$`jrcajide-new`
 (snaps <- snapshots())
-snaps$`web-server-gtm_website`
 droplet_name <- 'gtmwebsite'
 domain_name <- 'milanding.ovh'
 (running_droplets<-droplets())
@@ -34,53 +34,36 @@ if(domain_name %in% names(active_domains)) {
 }
 
 getOption("do_region", "ams3")
-getOption("do_image", snaps$`webservergtm-website-512mb-ams2-01-1480632878828-2gb-ams2-01-1508708763`)
 
-gtm_droplet <- droplet_create(name = droplet_name, 
-                              size = 's-1vcpu-2gb', 
-                              region = 'ams3', 
-                              ssh_keys = keys$`jrcajide-new`$id,
-                              image=snaps$`web-server-gtm_website`$id)
+# gtm_droplet <- droplet_create(name = droplet_name, 
+#                               size = 's-1vcpu-2gb', 
+#                               region = 'ams3', 
+#                               ssh_keys = keys$`jrcajide-new`$id,
+#                               image=snaps$`web-server-gtm_website`$id)
+
 
 gtm_droplet <- droplet_create(name = droplet_name, 
                               size = 's-1vcpu-2gb', 
                               region = 'ams3', 
                               ssh_keys = keys$`jrcajide-new`$id, 
-                              image='webservergtm-website-amsterdam')
-                              )
-
-
-standardise_keys(keys$`jrcajide-new`$id)
-library(jsonlite)
-res <- do_POST('droplets',
-               body = list(
-                 name = unbox(droplet_name),
-                 size = unbox('s-1vcpu-2gb'),
-                 image = unbox(snaps$`webservergtm-website-amsterdam`),
-                 region = unbox(region),
-                 ssh_keys = I(ssh_keys),
-                 backups = unbox(backups),
-                 ipv6 = unbox(ipv6),
-                 private_networking = unbox(private_networking),
-                 tags = I(tags),
-                 user_data = unbox(user_data)
-               ), ...
-)
-
-# Obtener ip del droplet
+                              image=snaps$`webservergtm-website-amsterdam`$id
+                              ) %>% droplet_wait()
 
 
 (running_droplets<-droplets())
 
 gtm_droplet_ip <- running_droplets[['gtmwebsite']]$networks$v4[[1]]$ip_address
+
 dom <- domain_create(domain_name, gtm_droplet_ip)
 
 dr <- domain_record_create(dom, "CNAME", name = "*.", data = "@", ttl = 1800)
 
+Sys.sleep(30)
 
-droplet_ssh("apt-get update")
-paste0("ssh root@",gtm_droplet_ip)
-
+session <- ssh_connect(paste0("root@",gtm_droplet_ip))
+out <- ssh_exec_internal(session, "cd /var/www/html/ && git pull")
+cat(rawToChar(out$stdout))
 
 # FIN
 droplet_delete(droplet_name)
+(droplets())
