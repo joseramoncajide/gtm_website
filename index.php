@@ -415,7 +415,7 @@ try {
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
 								<div class="socials">
-									<a id="addToCart" href="#" data-product-name="Wo'o Album #3" data-product-id="415911510" data-product-price="9"><span class="icon icon-shopping-18"></span></a>
+									<a id="addToCart" href="javascript:void(0);" data-product-name="Wo'o Album #3" data-product-id="415911510" data-product-price="9"><span class="icon icon-shopping-18"></span></a>
 								</div>
                                 <img src="/assets/fotos/cd_3_angle-300x300.jpg" class="img-responsive img-circle" alt="thumb" />
                             </div>
@@ -427,7 +427,7 @@ try {
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
                                 <div class="socials">
-									<a id="addToCart" href="#" data-product-name="Woo Logo" data-product-id="415911511" data-product-price="18"><span class="icon icon-shopping-18"></span></a>
+									<a id="addToCart" href="javascript:void(0);" data-product-name="Woo Logo" data-product-id="415911511" data-product-price="18"><span class="icon icon-shopping-18"></span></a>
                                 </div>
                                 <img src="/assets/fotos/T_1_front-300x300.jpg" class="img-responsive img-circle" alt="thumb" />
                             </div>
@@ -439,7 +439,7 @@ try {
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
                                 <div class="socials">
-									<a id="addToCart" href="#" data-product-name="Woo Ninja" data-product-id="415911512" data-product-price="15"><span class="icon icon-shopping-18"></span></a>
+									<a id="addToCart" href="javascript:void(0);" data-product-name="Woo Ninja" data-product-id="415911512" data-product-price="15"><span class="icon icon-shopping-18"></span></a>
 								</div>
                                 <img src="/assets/fotos/poster_4_up-300x300.jpg" class="img-responsive img-circle" alt="thumb" />
                             </div>
@@ -451,7 +451,7 @@ try {
                             <div class="thumb-wrapper">
 								<div class="overlay img-circle"></div>
                                 <div class="socials">
-									<a id="addToCart" href="#" data-product-name="Ship Your Idea" data-product-id="415911510" data-product-price="30"><span class="icon icon-shopping-18"></span></a>
+									<a id="addToCart" href="javascript:void(0);" data-product-name="Ship Your Idea" data-product-id="415911510" data-product-price="30"><span class="icon icon-shopping-18"></span></a>
 								</div>
                                 <img src="/assets/fotos/hoodie_7_front-300x300.jpg" class="img-responsive img-circle" alt="thumb" />
                             </div>
