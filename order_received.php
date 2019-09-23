@@ -73,12 +73,14 @@ if (defined('GTM_CODE')) {
 <?php
 include 'header.inc.php';
 ?>
+<section class="section dark">
+  <div class="container">
 
-
+    <div id="hero" class="static-header light">
         <div class="text-heading">
             <h1>  <span class="highlight">Thank you!</span> Your order has been received.</h1>
             <p>&nbsp;</p>
-            <div class="order">
+            <div class="order" style="backgroud-color: #ffffff">
               <ul>
                 <li>Order number: <span>GTM123456</span></li>
                 <li>Total: <span>95,99 €</span></li>
@@ -88,9 +90,10 @@ include 'header.inc.php';
 
         </div>
         
-
+        </div>
         
-
+    </div>
+</section>
 
 
 
