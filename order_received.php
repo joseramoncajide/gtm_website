@@ -80,8 +80,8 @@ include 'header.inc.php';
             <p>&nbsp;</p>
             <div class="order">
               <ul>
-                <li>Order number: <span><?php echo random_int(100, 999); ?></span></li>
-                <li>Total: <span><?php echo random_int(100, 999); ?> €</span></li>
+                <li>Order number: <span>GTM123456</span></li>
+                <li>Total: <span>95,99 €</span></li>
             </div>
 
 
