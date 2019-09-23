@@ -73,6 +73,8 @@ if (defined('GTM_CODE')) {
 <?php
 include 'header.inc.php';
 ?>
+<section class="section dark">
+  <div class="container">
 
     <div id="hero" class="static-header light">
         <div class="text-heading">
@@ -89,6 +91,9 @@ include 'header.inc.php';
         </div>
         
         </div>
+        
+    </div>
+</section>
 
 
 
