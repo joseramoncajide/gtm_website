@@ -73,10 +73,8 @@ if (defined('GTM_CODE')) {
 <?php
 include 'header.inc.php';
 ?>
-<section class="section dark">
-  <div class="container">
 
-    <div id="hero" class="static-header light">
+
         <div class="text-heading">
             <h1>  <span class="highlight">Thank you!</span> Your order has been received.</h1>
             <p>&nbsp;</p>
@@ -90,10 +88,9 @@ include 'header.inc.php';
 
         </div>
         
-        </div>
+
         
-    </div>
-</section>
+
 
 
 
