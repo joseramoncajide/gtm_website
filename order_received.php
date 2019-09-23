@@ -79,7 +79,7 @@ include 'header.inc.php';
         <div class="text-heading">
             <h1>  <span class="highlight">Thank you!</span> Your order has been received.</h1>
             <p>&nbsp;</p>
-            <div class="order" style="backgroud-color: #ffffff">
+            <div class="order" style="background-color: #000; padding:25px;">
               <ul>
                 <li>Order number: <span>GTM123456</span></li>
                 <li>Total: <span>95,99 €</span></li>
