@@ -81,7 +81,7 @@ include 'header.inc.php';
             <p>&nbsp;</p>
             <div class="order" style="background-color: #000; padding:25px;">
               <ul>
-                <li>Order number: <span>GTM123456</span></li>
+                <li>Order number: <span>ES-123456</span></li>
                 <li>Total: <span>95,99 €</span></li>
             </div>
         </div>
