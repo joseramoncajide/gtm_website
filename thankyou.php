@@ -36,6 +36,13 @@ require "crm.inc.php";
 include 'dataLayer.inc.php';
 ?>
 
+
+<script>
+	dataLayer.push({
+		'lead_value' : 100
+	});
+</script>
+
 <?php
 if (defined('GTM_CODE')) {
     echo"<!-- Google Tag Manager -->", PHP_EOL;
