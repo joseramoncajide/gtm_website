@@ -39,7 +39,8 @@ include 'dataLayer.inc.php';
 
 <script>
 	dataLayer.push({
-		'lead_value' : 100
+		'value' : 100,
+		'currency' : 'USD'
 	});
 </script>
 
