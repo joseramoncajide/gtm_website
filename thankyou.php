@@ -36,14 +36,6 @@ require "crm.inc.php";
 include 'dataLayer.inc.php';
 ?>
 
-
-<script>
-	dataLayer.push({
-		'value' : 100,
-		'currency' : 'USD'
-	});
-</script>
-
 <?php
 if (defined('GTM_CODE')) {
     echo"<!-- Google Tag Manager -->", PHP_EOL;
