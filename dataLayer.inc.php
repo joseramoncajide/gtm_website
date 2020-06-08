@@ -8,6 +8,7 @@
 		'user_login': '<?php echo USER_LOGIN;?>',
 		'user_age': '<?php echo USER_AGE;?>',
 		'user_bin': '<?php echo USER_BIN;?>',
+		'user_segment': '<?php echo USER_SEGMENT;?>',
 		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
 		'pageTemplate': 'landingPage',
 		'contentGroup1': 'Landings'
