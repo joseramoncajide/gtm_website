@@ -95,6 +95,9 @@ if ($_COOKIE['logged_user'] != '') {
       } else {
         $bin = "Senior Citizen";
       }
+      
+      $segments = Array('Gold', 'Silver','Bronze');
+
 
       define('USER_ID', md5($values[$key][4]));
       define('USER_COHORT', date('m-Y', $new_Date));
@@ -104,6 +107,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_LAST_ACCESS', date('d-m-Y H:i:s'));
       define('USER_AGE', $user_age);
       define('USER_BIN', $bin);
+      define('USER_SEGMENT', $segments[array_rand($segments)]);
 
     } else {
 
@@ -115,6 +119,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_LAST_ACCESS', '');
       define('USER_AGE', '');
       define('USER_BIN', '');
+      define('USER_SEGMENT', ');
 
     } 
 
