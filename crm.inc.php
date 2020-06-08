@@ -124,18 +124,7 @@ if ($_COOKIE['logged_user'] != '') {
 
     } 
 
-  } else {
-
-      define('USER_ID', 'null');
-      define('USER_COHORT', 'null');
-      define('USER_NAME', 'null');
-      define('USER_LOGIN', 'null');
-      define('USER_LAST_ACCESS', 'null');
-      define('USER_LAST_ACCESS', 'null');
-      define('USER_AGE', 'null');
-      define('USER_BIN', 'null');
-
-}
+  } 
 
 
 ?>
