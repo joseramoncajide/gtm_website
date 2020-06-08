@@ -120,7 +120,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_LAST_ACCESS', '');
       define('USER_AGE', '');
       define('USER_BIN', '');
-      define('USER_SEGMENT', ');
+      define('USER_SEGMENT', '');
 
     } 
 
