@@ -96,7 +96,8 @@ if ($_COOKIE['logged_user'] != '') {
         $bin = "Senior Citizen";
       }
       
-      $segments = Array('Gold', 'Silver','Bronze');
+      $segments = array('Gold', 'Silver','Bronze');
+      
 
 
       define('USER_ID', md5($values[$key][4]));
