@@ -62,7 +62,7 @@ echo "gtm_values=>";
 print_r($gtm_values[$key][0]);
 echo "=============";
 
-if (isset($key)) {
+if (!is_null($key)) {
   echo "is not empty";
   define('GTM_CODE', $gtm_values[$key][0]);
 } else {
