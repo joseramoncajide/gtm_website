@@ -58,7 +58,7 @@ echo $student_subdomain;
 $key = array_search($student_subdomain, array_column($gtm_values, 1));
 echo "KEY=>";
 print($key);
-echo "$gtm_values=>";
+echo "gtm_values=>";
 print_r($gtm_values[$key][0]);
 
 define('GTM_CODE', $gtm_values[$key][0]);
