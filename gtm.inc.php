@@ -56,6 +56,13 @@ echo $student_subdomain;
 
 // Buscamos el cófigo de GTM en la columna GTM Account ID en la que coincida la columna Subdomain con el student_subdomain
 $key = array_search($student_subdomain, array_column($gtm_values, 1));
+
+var_dump(array_search($student_subdomain, array_column($gtm_values, 1)));
+
+if (in_array($student_subdomain, array_column($gtm_values, 1))) {
+    echo "Existe Irix";
+}
+
 echo "KEY=>";
 print($key);
 echo "gtm_values=>";
