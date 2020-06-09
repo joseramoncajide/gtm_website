@@ -37,7 +37,7 @@ include 'dataLayer.inc.php';
 ?>
 
 <?php
-if (defined('GTM_CODE')) {
+if (defined('GTM_CODE') AND !empty($GTM_CODE)) {
     echo"<!-- Google Tag Manager -->", PHP_EOL;
     echo "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':";
     echo "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],";
@@ -53,7 +53,7 @@ if (defined('GTM_CODE')) {
 </head>
 <body id="landing-page">
 <?php
-if (defined('GTM_CODE')) {
+if (defined('GTM_CODE') AND !empty($GTM_CODE)) {
   echo"<!-- Google Tag Manager (noscript) -->", PHP_EOL;
   echo'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=';
   echo GTM_CODE;
