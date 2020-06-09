@@ -47,7 +47,7 @@ $gtm_response = $gtm_service->spreadsheets_values->get($gtm_spreadsheetId, $gtm_
 
 $gtm_values = $gtm_response->getValues();
 #print("<pre>Hola");
-#print_r($gtm_values );
+print_r($gtm_values );
 
 // Buscamos el nombre del subdominio
 $student_subdomain = array_shift((explode(".",$_SERVER['HTTP_HOST'])));
