@@ -46,7 +46,7 @@ $gtm_range = 'GTM-IDs!B2:C';
 $gtm_response = $gtm_service->spreadsheets_values->get($gtm_spreadsheetId, $gtm_range);
 
 $gtm_values = $gtm_response->getValues();
-#print("<pre>Hola");
+print("<pre>Hola");
 print_r($gtm_values );
 
 // Buscamos el nombre del subdominio
@@ -56,6 +56,7 @@ echo $student_subdomain;
 
 // Buscamos el cófigo de GTM en la columna GTM Account ID en la que coincida la columna Subdomain con el student_subdomain
 $key = array_search($student_subdomain, array_column($gtm_values, 1));
+print($key);
 print_r($gtm_values[$key][0]);
 
 define('GTM_CODE', $gtm_values[$key][0]);
