@@ -46,35 +46,36 @@ $gtm_range = 'GTM-IDs!B2:C';
 $gtm_response = $gtm_service->spreadsheets_values->get($gtm_spreadsheetId, $gtm_range);
 
 $gtm_values = $gtm_response->getValues();
-print("<pre>Hola");
-print_r($gtm_values );
+//print("<pre>Hola");
+//print_r($gtm_values );
 
 // Buscamos el nombre del subdominio
 $student_subdomain = array_shift((explode(".",$_SERVER['HTTP_HOST'])));
 
-echo $student_subdomain;
+//echo $student_subdomain;
 
 // Buscamos el cófigo de GTM en la columna GTM Account ID en la que coincida la columna Subdomain con el student_subdomain
 $key = array_search($student_subdomain, array_column($gtm_values, 1));
 
-var_dump($key);
 
-echo "KEY=>";
-print($key);
-echo "gtm_values=>";
-print_r($gtm_values[$key][0]);
-echo "=============";
+// var_dump($key);
+
+// echo "KEY=>";
+// print($key);
+// echo "gtm_values=>";
+// print_r($gtm_values[$key][0]);
+// echo "=============";
 
 if (is_int($key)) {
-  echo "is not empty";
+//   echo "is not empty";
   define('GTM_CODE', $gtm_values[$key][0]);
-  echo "=====GTM========\n";
-  echo GTM_CODE;
+//   echo "=====GTM========\n";
+//   echo GTM_CODE;
 } else {
-  echo "is empty";
+//   echo "is empty";
   define('GTM_CODE', "");
-  echo "=====GTM========\n";
-  echo GTM_CODE;
+//   echo "=====GTM========\n";
+//   echo GTM_CODE;
 }
 
 # define('GTM_CODE', $gtm_values[$key][0]);
