@@ -70,6 +70,8 @@ if ($key != '') {
 
 # define('GTM_CODE', $gtm_values[$key][0]);
 
+echo "=====GTM========\n";
+
 echo $GTM_CODE;
 
 ?>
