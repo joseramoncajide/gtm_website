@@ -68,15 +68,14 @@ echo "=============";
 if ($key) {
   echo "is not empty";
   define('GTM_CODE', $gtm_values[$key][0]);
+  echo "=====GTM========\n";
+  echo $GTM_CODE;
 } else {
   echo "is empty";
   define('GTM_CODE', "");
+  echo "=====GTM========\n";
+  echo $GTM_CODE;
 }
 
 # define('GTM_CODE', $gtm_values[$key][0]);
-
-echo "=====GTM========\n";
-
-echo $GTM_CODE;
-
 ?>
