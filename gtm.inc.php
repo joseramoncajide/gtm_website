@@ -61,7 +61,13 @@ print($key);
 echo "gtm_values=>";
 print_r($gtm_values[$key][0]);
 
-define('GTM_CODE', $gtm_values[$key][0]);
+if (!empty($gtm_values[$key][0])) {
+  define('GTM_CODE', $gtm_values[$key][0]);
+} else {
+  define('GTM_CODE', "");
+}
+
+# define('GTM_CODE', $gtm_values[$key][0]);
 
 echo $GTM_CODE;
 
