@@ -1,3 +1,13 @@
+<?php
+
+$form_pages = array('form.php', 'ajaxform.php');
+if (in_array($form_pages, $_SERVER['REQUEST_URI'])) {
+    echo "Existe Irix";
+}
+
+?>
+
+
 <script>
 	var dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
 
