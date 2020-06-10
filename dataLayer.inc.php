@@ -5,6 +5,13 @@ if (in_array($form_pages, $_SERVER['REQUEST_URI'])) {
     echo "Existe Irix";
 }
 
+if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false){
+echo 'url contains form';
+}
+
+if(strpos($_SERVER['REQUEST_URI'], '/ajaxform.php') !== false){
+echo 'url contains ajaxform';
+}
 ?>
 
 
