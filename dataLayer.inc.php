@@ -1,17 +1,12 @@
 <?php
-echo $_SERVER['REQUEST_URI'];
-$form_pages = array('/form.php', '/ajaxform.php');
-if (in_array($form_pages, $_SERVER['REQUEST_URI'])) {
-    echo "Existe Irix";
+
+
+if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false || strpos($_SERVER['REQUEST_URI'], '/ajaxform.php') !== false) {
+  define('PAGE_TYPE', 'Form');
+} else {
+  define('PAGE_TYPE', 'Normal');
 }
 
-if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false){
-echo 'url contains form';
-}
-
-if(strpos($_SERVER['REQUEST_URI'], '/ajaxform.php') !== false){
-echo 'url contains ajaxform';
-}
 ?>
 
 
@@ -27,7 +22,7 @@ echo 'url contains ajaxform';
 		'user_bin': '<?php echo USER_BIN;?>',
 		'user_segment': '<?php echo USER_SEGMENT;?>',
 		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
-		'pageTemplate': 'landingPage',
+		'pageTemplate': '<?php echo PAGE_TYPE;?>',
 		'contentGroup1': 'Landings'
 	});
 </script>
