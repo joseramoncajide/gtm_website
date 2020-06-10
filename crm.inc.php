@@ -46,7 +46,7 @@ if ($_COOKIE['logged_user'] != '') {
 	$response = $service->spreadsheets_values->get($spreadsheetId, $range);
 	$values = $response->getValues();
 	// print("<pre>VALUES:");
-	print_r($values );
+	//print_r($values );
   //
   // echo $_COOKIE['logged_user'];
   //
@@ -54,7 +54,7 @@ if ($_COOKIE['logged_user'] != '') {
 
 	$key = array_search($_COOKIE['logged_user'], array_column($values, 4));
 
-  //print_r($key );
+  print_r($key );
 
   //print($values[$key][4]);
 
