@@ -1,7 +1,7 @@
 <?php
 
 
-if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false || strpos($_SERVER['REQUEST_URI'], '/ajaxform.php') !== false) {
+if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false || strpos($_SERVER['REQUEST_URI'], '/ajaxform.php') !== false || strpos($_SERVER['REQUEST_URI'], '/register.php') !== false) {
   define('PAGE_TYPE', 'Form');
 } else {
   define('PAGE_TYPE', 'Normal');
