@@ -54,7 +54,7 @@ if ($_COOKIE['logged_user'] != '') {
 
 	$key = array_search($_COOKIE['logged_user'], array_column($values, 4));
 
-  print_r($key );
+  //print_r($key );
 
   //print($values[$key][4]);
 
@@ -100,7 +100,8 @@ if ($_COOKIE['logged_user'] != '') {
       
 
 
-      define('USER_ID', md5($values[$key][4]));
+      // define('USER_ID', md5($values[$key][4]));
+      define('USER_ID', $key + 2);
       define('USER_COHORT', date('m-Y', $new_Date));
       define('USER_NAME', ucfirst(strtolower($values[$key][2])));
       define('USER_LOGIN', $values[$key][4]);
