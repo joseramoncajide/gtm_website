@@ -69,6 +69,18 @@ dataLayer.push({
 });
 </script>
 
+
+<script>
+ var google_tag_params = {
+  'ecomm_pagetype': 'purchase',       //set the pagetype value
+  'ecomm_pcat': ['electronics', 'books'],   // product category
+  'ecomm_prodid': ['123A', 'H456'],      // sku
+  'ecomm_pname': ['Nexus','Router'],    // product name 
+  'ecomm_pvalue': [99, 19.99],      // product value
+  'ecomm_totalvalue': '118.99'      // total value
+};
+</script>
+
 <?php
 } 
 ?>
