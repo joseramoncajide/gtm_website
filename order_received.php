@@ -82,7 +82,7 @@ include 'header.inc.php';
             <div class="order" style="background-color: #000; padding:25px;">
               <ul>
                 <li>Order number: <span>ES-123456</span></li>
-                <li>Total: <span>95,99 €</span></li>
+                <li>Total: <span>35,43 €</span></li>
             </div>
         </div>
     </div>

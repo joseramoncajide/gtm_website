@@ -36,33 +36,23 @@ if(strpos($_SERVER['REQUEST_URI'], '/order_received.php') !== false) {
 
 dataLayer.push({
   'ecommerce': {
+    'currencyCode': 'EUR',
     'purchase': {
       'actionField': {
-        'id': 'T12345',                         // Transaction ID. Required for purchases and refunds.
-        'affiliation': 'Online Store',
-        'revenue': '35.43',                     // Total transaction value (incl. tax and shipping)
+        'id': 'ES123456',
+        'revenue': '35.43',
         'tax':'4.90',
-        'shipping': '5.99',
-        'coupon': 'SUMMER_SALE'
+        'shipping': '5.99'
       },
-      'products': [{                            // List of productFieldObjects.
-        'name': 'Triblend Android T-Shirt',     // Name or ID is required.
+      'products': [{                            
+        'name': 'Triblend Android T-Shirt',     
         'id': '12345',
-        'price': '15.25',
+        'price': '35.43',
         'brand': 'Google',
         'category': 'Apparel',
         'variant': 'Gray',
         'quantity': 1,
-        'coupon': ''                            // Optional fields may be omitted or set to empty string.
-       },
-       {
-        'name': 'Donut Friday Scented T-Shirt',
-        'id': '67890',
-        'price': '33.75',
-        'brand': 'Google',
-        'category': 'Apparel',
-        'variant': 'Black',
-        'quantity': 1
+        'coupon': '' 
        }]
     }
   }
@@ -73,11 +63,11 @@ dataLayer.push({
 <script>
  var google_tag_params = {
   'ecomm_pagetype': 'purchase',       //set the pagetype value
-  'ecomm_pcat': ['electronics', 'books'],   // product category
-  'ecomm_prodid': ['123A', 'H456'],      // sku
-  'ecomm_pname': ['Nexus','Router'],    // product name 
-  'ecomm_pvalue': [99, 19.99],      // product value
-  'ecomm_totalvalue': '118.99'      // total value
+  'ecomm_pcat': ['Apparel'],   // product category
+  'ecomm_prodid': ['12345'],      // sku
+  'ecomm_pname': ['Triblend Android T-Shirt'],    // product name 
+  'ecomm_pvalue': [35.43],      // product value
+  'ecomm_totalvalue': '35.43'      // total value
 };
 </script>
 
