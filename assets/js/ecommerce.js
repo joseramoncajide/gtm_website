@@ -31,22 +31,19 @@
 
 
 
-jQuery('#addToCart').click(function(){
+jQuery('[id^="addToCart"]').click(function(){
     		    dataLayer.push({
-					'event': "ecommerce.js",
-					'eventCategory': 'Books',
-					'eventAction': 'Add to cart',
-					'eventLabel': 1,
-					'ecommerce': {
-						'currencyCode': 'EUR',
-						'add': {                           
-						  'products': [{                      
-								'id': this.getAttribute('data-product-id'),
-								'name': this.getAttribute('data-product-name'),
-								'price': this.getAttribute('data-product-price'),
-								'quantity': 1
-						   }]
-						}
-					  }
-				});
+    					'event': "add_to_cart",
+    					'ecommerce': {
+    						'currencyCode': 'EUR',
+    						'add': {                           
+    						  'products': [{                      
+    								'id': this.getAttribute('data-product-id'),
+    								'name': this.getAttribute('data-product-name'),
+    								'price': this.getAttribute('data-product-price'),
+    								'quantity': 1
+    						   }]
+    						}
+    					  }
+    				});
 		});
