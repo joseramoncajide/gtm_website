@@ -12,7 +12,7 @@
 				'name': productName,       
 				'id': productId,
 				'list': productList,
-				'price': productPrice,
+				'price': parseFloat(productPrice),
 				'position': productPosition
 			})			
 	}		
