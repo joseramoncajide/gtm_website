@@ -233,17 +233,17 @@ include 'header.inc.php';
 
             var inputPassword = String($('#password').val()); console.log("-> Clave:" + inputPassword);
 
-            var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
-            var clientId = String(clientIdSplit[0]);
-            console.log("-> clientId:" + clientId);
+            // var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+            // var clientId = String(clientIdSplit[0]);
+            // console.log("-> clientId:" + clientId);
 
             var values = {
               'Email': inputEmail,
               'Nombre': inputFullName,
               'Fecha_nac': fechaNac,
               'Usuario': inputUserName,
-              'Password': inputPassword,
-              'Cookie_ga': clientId
+              'Password': inputPassword
+              // 'Cookie_ga': clientId
             };
 
           var $this = $(form);
