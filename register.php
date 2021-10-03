@@ -238,9 +238,11 @@ include 'header.inc.php';
             // console.log("-> clientId:" + clientId);
             
             try {
-              var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
-              var clientId = String(clientIdSplit[0]);
-              console.log("-> clientId:" + clientId);
+              if (typeof ga !== "undefined") {
+                var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+                var clientId = String(clientIdSplit[0]);
+                console.log("-> clientId:" + clientId);
+                }
             } catch (error) {
               var clientId = ""
               console.error(error);
