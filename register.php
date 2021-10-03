@@ -242,9 +242,11 @@ include 'header.inc.php';
                 var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
                 var clientId = String(clientIdSplit[0]);
                 console.log("-> clientId:" + clientId);
-                }
+              } else {
+                var clientId = "instala_ga_primero"
+              }
             } catch (error) {
-              var clientId = ""
+              
               console.error(error);
 
             }
