@@ -236,14 +236,24 @@ include 'header.inc.php';
             // var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
             // var clientId = String(clientIdSplit[0]);
             // console.log("-> clientId:" + clientId);
+            
+            try {
+              var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
+              var clientId = String(clientIdSplit[0]);
+              console.log("-> clientId:" + clientId);
+            } catch (error) {
+              var clientId = ""
+              console.error(error);
+
+            }
 
             var values = {
               'Email': inputEmail,
               'Nombre': inputFullName,
               'Fecha_nac': fechaNac,
               'Usuario': inputUserName,
-              'Password': inputPassword
-              // 'Cookie_ga': clientId
+              'Password': inputPassword,
+              'Cookie_ga': clientId
             };
 
           var $this = $(form);
