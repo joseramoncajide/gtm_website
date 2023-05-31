@@ -542,5 +542,11 @@ try {
 
     <script type="text/javascript" src="assets/js/ecommerce.js"></script>
 <!-- script id="CookieDeclaration" src="https://consent.cookiebot.com/42fb45ba-f2ac-4389-bf02-36db2605c44a/cd.js" type="text/javascript" async></script -->
+
+<script
+  id="CookieDeclaration"
+  src="https://consent.cookiebot.com/42fb45ba-f2ac-4389-bf02-36db2605c44a/cd.js"
+  type="text/javascript"
+></script>  
 </body>
 </html>
