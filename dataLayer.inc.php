@@ -24,7 +24,7 @@ if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false || strpos($_SERVER['RE
 		'user_last_login': '<?php echo USER_LAST_ACCESS;?>',
 		'pageTemplate': '<?php echo PAGE_TYPE;?>',
 		'contentGroup1': 'Landings',
-		'currency': 'EUR'
+		'currency': 'EUR',
 		'lead_value': '<?php echo LEAD_VALUE;?>'
 	});
 </script>
