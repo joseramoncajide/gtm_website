@@ -149,7 +149,7 @@ include 'header.inc.php';
     <![endif]-->
     <!--[if (gte IE 9) | (!IE)]><!-->
         <!-- script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.0.min.js" integrity="sha256-8oQ1OnzE2X9v4gpRVRMb1DWHoPHJilbur1LP9ykQ9H0=" crossorigin="anonymous"></script>
     <!--<![endif]-->
 
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
