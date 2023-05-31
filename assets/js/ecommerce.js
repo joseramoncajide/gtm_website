@@ -9,21 +9,21 @@
 			productPosition = i;
 		
 			products.push({
-				'name': productName,       
-				'id': productId,
-				'list': productList,
+				'item_name': productName,       
+				'item_id': productId,
+				'item_list_name': productList,
 				'price': parseFloat(productPrice),
-				'position': productPosition
+				'index': productPosition
 			})			
 	}		
 	  var ecommerceData = {
-	  	//'event': 'evento_ecommerce',
+	  'event': 'view_item_list',
 		'ecommerce' : {
-		  currencyCode : 'EUR',
-		  'impressions': products
+		  'currency' : 'EUR',
+		  'items': products
 		}
 	  };
-	  
+	  dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 	  dataLayer.push(ecommerceData);
   	
   	//return ecommerceData;
@@ -35,15 +35,14 @@ jQuery('[id^="addToCart"]').click(function(){
     		    dataLayer.push({
     					'event': "add_to_cart",
     					'ecommerce': {
-    						'currencyCode': 'EUR',
-    						'add': {                           
-    						  'products': [{                      
-    								'id': this.getAttribute('data-product-id'),
-    								'name': this.getAttribute('data-product-name'),
-    								'price': this.getAttribute('data-product-price'),
-    								'quantity': 1
-    						   }]
-    						}
+    						'currency': 'EUR',
+  						  'items': [{                      
+  								'item_id': this.getAttribute('data-product-id'),
+  								'item_name': this.getAttribute('data-product-name'),
+  								'price': this.getAttribute('data-product-price'),
+  								'quantity': 1
+  						   }]
+    					
     					  }
     				});
 		});

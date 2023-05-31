@@ -138,6 +138,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_AGE', '');
       define('USER_BIN', '');
       define('USER_SEGMENT', '');
+      define('LEAD_VALUE', '');
 
 }
 
