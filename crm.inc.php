@@ -110,6 +110,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_AGE', $user_age);
       define('USER_BIN', $bin);
       define('USER_SEGMENT', $segments[array_rand($segments)]);
+      define('LEAD_VALUE', rand(10,100));
 
     } else {
 
@@ -122,6 +123,7 @@ if ($_COOKIE['logged_user'] != '') {
       define('USER_AGE', '');
       define('USER_BIN', '');
       define('USER_SEGMENT', '');
+      define('LEAD_VALUE', '');
 
     } 
 
