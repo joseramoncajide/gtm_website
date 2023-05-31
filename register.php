@@ -264,6 +264,7 @@ include 'header.inc.php';
 
           var $this = $(form);
 
+// si en algún momento da errores CORS hay que redeployar la app script desde https://script.google.com/home/projects/1VhE63PvuE9YcAEFf0ADgjWm076gDyghWxX_RkCNorkYwsZlm-ewlPmH0/edit
           $.ajax({
             url: 'https://script.google.com/macros/s/AKfycbyqkcww_XyzAOqe2tvbS8QhWhVlVqbjNuKmkA6dvPR8xCkLs8c/exec',
             type: 'POST',
