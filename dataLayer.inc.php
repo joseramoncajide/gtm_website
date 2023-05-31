@@ -25,7 +25,8 @@ if(strpos($_SERVER['REQUEST_URI'], '/form.php') !== false || strpos($_SERVER['RE
 		'pageTemplate': '<?php echo PAGE_TYPE;?>',
 		'contentGroup1': 'Landings',
 		'currency': 'EUR',
-		'lead_value': '<?php echo LEAD_VALUE;?>'
+		'lead_value': '<?php echo LEAD_VALUE;?>',
+		'language': 'es'
 	});
 </script>
 
