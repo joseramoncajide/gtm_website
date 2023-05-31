@@ -167,6 +167,17 @@ include 'header.inc.php';
 
 <script>
 
+function get_ga_clientid() {
+  var cookie = {};
+  document.cookie.split(';').forEach(function(el) {
+    var splitCookie = el.split('=');
+    var key = splitCookie[0].trim();
+    var value = splitCookie[1];
+    cookie[key] = value;
+  });
+  return cookie["_ga"].substring(6);
+}
+
 (function(){
     window.app 			         = {el : {}, fn : {}};
 	app.el['window']         = $(window);
@@ -243,9 +254,11 @@ include 'header.inc.php';
               if (typeof ga !== "undefined") {
                 var clientIdSplit = ga.getAll()[0].get('clientId').split('.');
                 var clientId = String(clientIdSplit[0]);
-                console.log("-> clientId:" + clientId);
+                console.log("UA -> clientId:" + clientId);
               } else {
-                var clientId = "instala_ga_primero"
+                // var clientId = "instala_ga_primero"
+                var clientId = get_ga_clientid()
+                console.log("GA4 -> clientId:" + clientId);
               }
             } catch (error) {
               
