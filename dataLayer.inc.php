@@ -117,15 +117,15 @@ dataLayer.push({
 }
 </style>
 <!--//BLOQUE COOKIES-->
-<div id="barraaceptacion" style="display: block;">
+<!-- div id="barraaceptacion" style="display: block;">
     <div class="inner">
         Solicitamos su permiso para obtener datos estadísticos de su navegación en esta web, en cumplimiento del Real 
         Decreto-ley 13/2012. Si continúa navegando consideramos que acepta el uso de cookies.
         <a href="javascript:void(0);" class="ok" onclick="PonerCookie();"><b>OK</b></a> 
     </div>
-</div>
+</div -->
  
-<script>
+<!-- script>
 function getCookie(c_name){
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
@@ -167,6 +167,6 @@ function PonerCookie(){
 
 
 
-</script>
+</script -->
 <!--//FIN BLOQUE COOKIES-->
    
